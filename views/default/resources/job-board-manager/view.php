@@ -34,7 +34,12 @@ if ($blog->comments_on != 'Off' && $blog->status == 'published') {
 	//$params['content'] .= elgg_view_comments($blog);
 }
 
-$params['sidebar'] = elgg_view('blog/sidebar', array('page' => $page_type));
+//$params['sidebar'] = elgg_view('blog/sidebar', array('page' => $page_type));
+/*elgg_unextend_view('page/elements/sidebar', 'page/elements/sidebar', 0);
+elgg_unextend_view('page/elements/sidebar', 'search/header', 0);
+elgg_unextend_view('page/elements/owner_block', 'page/elements/owner_block', 0);
+elgg_unextend_view('page/elements/sidebar_alt', 'page/elements/sidebar_alt', 0);
+*/
 
 $body = elgg_view_layout('content', $params);
 

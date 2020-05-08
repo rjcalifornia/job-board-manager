@@ -68,7 +68,7 @@
 .about-job{
     padding-top: 34px;
 	display: table;
-	 width: 70%;
+	 width: 78%;
 }
 .div-about-row {
 	display: table-row;
