@@ -51,6 +51,7 @@ function job_board_manager_init() {
 	$action_path = __DIR__ . '/actions/job-board-manager';
 	elgg_register_action('job-board-manager/save', "$action_path/save.php");
         elgg_register_action('job-board-manager/candidate', "$action_path/candidate.php", "public");
+        elgg_register_action('job-board-manager/delete', "$action_path/delete.php");
 	//elgg_register_action('blog/auto_save_revision', "$action_path/auto_save_revision.php");
 	//elgg_register_action('blog/delete', "$action_path/delete.php");
 

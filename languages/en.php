@@ -61,6 +61,8 @@ return array(
         'job:board:candidate_resume' => 'Resume',
         'job:board:apply_button' => 'Apply here!',
         'job:board:submissions' => 'Applications received',
+        'job:board:delete_job' => 'Delete job',
+        'job:board:edit' => 'Edit job details',
         'job:board:' => '',
 	
 );

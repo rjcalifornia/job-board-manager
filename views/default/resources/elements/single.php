@@ -47,6 +47,31 @@ $jobType = $job->job_type;
       
       }
       
+      
+      $delete_link = '';
+
+
+if ($job->guid) {
+	// add a delete button if editing
+	$delete_url = "action/job-board-manager/delete?guid={$job->guid}";
+	$delete_link = elgg_view('output/url', array(
+		'href' => $delete_url,
+		'text' => elgg_echo('job:board:delete_job'),
+                'style' => 'color:white;',
+		'class' => 'elgg-button elgg-button-delete float-alt',
+		'confirm' => true,
+	));
+        
+        
+        $edit_url = "job-board-manager/edit/{$job['guid']}/";
+	$edit_link = elgg_view('output/url', array(
+		'href' => $edit_url,
+		'text' => elgg_echo('job:board:edit'),
+		'class' => 'elgg-button elgg-button-submit',
+		//'confirm' => true,
+	));
+}
+      
 ?>
 
 
@@ -195,9 +220,13 @@ if($current_user != $job->owner_guid)
     
 if($current_user == $job->owner_guid)
     {
+    
+    
         echo elgg_view('resources/elements/submissions', array(
             'job' => $job,
         ));
+        echo $edit_link;
+        echo $delete_link;
     }
 
 

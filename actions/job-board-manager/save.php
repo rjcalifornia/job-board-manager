@@ -42,8 +42,28 @@ $container = (int)get_input('container_guid');
 if ($guid) {
 	$entity = get_entity($guid);
         $entity->title = $title;
+        $entity->description = $description;
+        $entity->total_openings = $totalOpenings;
+        $entity->job_type = $jobType;
+        $entity->job_level = $jobLevel;
+        $entity->years_experience = $yearsExperience;
+        $entity->salary_type = $salaryType;
+        $entity->fixed_salary = $fixedSalary;
+        $entity->salary_duration = $salaryDuration;
+        $entity->salary_currency = $salaryCurrency;
+        $entity->company_name = $companyName;
+        $entity->company_location = $companyLocation;
+        $entity->company_address = $companyAddress;
+        $entity->company_website = $companyWebsite;
+        $entity->expiration_date = $expirationDate;
+
         $entity->access_id = $access;
         $entity->comments_on = $comments;
+        
+        
+
+        
+        $entity->status = $status;
         $jobGuid = $entity->save();
         if ($jobGuid) {
    system_message("Your job details were saved.");
