@@ -71,6 +71,7 @@ echo <<<___HTML
 </div>
    </br>
 <div id="Create" style="display:none">
+</br>
 <div>
 	<label for="job_title">$name_label</label>
 	$name_input

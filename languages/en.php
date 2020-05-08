@@ -57,9 +57,9 @@ return array(
         'job:board:candidate_name' => 'Full name',
         'job:board:candidate_email' => 'Email',
         'job:board:candidate_phone' => 'Phone number',
-        'job:board:view_resume' => 'View resume',
+        'job:board:view_resume' => 'Download',
         'job:board:candidate_resume' => 'Resume',
-        'job:board:apply_button' => 'Submit application',
+        'job:board:apply_button' => 'Apply here!',
         'job:board:submissions' => 'Applications received',
         'job:board:' => '',
 	

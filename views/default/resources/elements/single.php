@@ -98,7 +98,7 @@ echo elgg_echo('job:board:about_company');
 			
 			<li class="elgg-tag">
                             <span class="job-elgg-icon fa elgg-icon-location fa-location-arrow"></span>
-                                <?php echo $job->company_location ?>
+                                <?php echo $job->company_address ?>
                             
                         </li>
                         

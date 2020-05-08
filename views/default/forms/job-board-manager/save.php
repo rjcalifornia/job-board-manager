@@ -84,6 +84,7 @@ $title_label = elgg_echo('job:board:title');
 $title_input = elgg_view('input/text', array(
 	'name' => 'title',
 	'id' => 'job_title',
+        'required' => true,
 	'value' => $vars['title']
 ));
 
@@ -93,6 +94,7 @@ $description_label = elgg_echo('job:board:description');
 $description_input = elgg_view('input/longtext', array(
 	'name' => 'description',
 	'id' => 'job_description',
+        'required' => true,
 	'value' => $vars['description']
 ));
 
@@ -101,6 +103,7 @@ $openings_label = elgg_echo('job:board:total_openings');
 $openings_input = elgg_view('input/text', array(
 	'name' => 'total_openings',
 	'id' => 'job_total_openings',
+        'required' => true,
 	'value' => $vars['total_openings']
 ));
 
@@ -109,6 +112,7 @@ $job_type_label = elgg_echo('job:board:type');
 $job_type_input = elgg_view('input/select', array(
 	'name' => 'job_type',
 	'id' => 'job_job_type',
+        'required' => true,
 	'options_values' => $jobSelectTypes,
 'value' => $vars['job_type'],
 ));
@@ -117,6 +121,7 @@ $job_level_label = elgg_echo('job:board:level');
 $job_level_input = elgg_view('input/select', array(
 	'name' => 'job_level',
 	'id' => 'job_job_level',
+        'required' => true,
 	'options_values' => $jobSelectLevel,
 'value' => $vars['job_level'],
 ));
@@ -125,6 +130,7 @@ $years_experience_label = elgg_echo('job:board:years_experience');
 $years_experience_input = elgg_view('input/text', array(
 	'name' => 'years_experience',
 	'id' => 'job_years_experience',
+        'required' => true,
 	'value' => $vars['years_experience']
 ));
 
@@ -132,6 +138,7 @@ $salary_type_label = elgg_echo('job:board:salary_type');
 $salary_type_input = elgg_view('input/select', array(
 	'name' => 'salary_type',
 	'id' => 'job_salary_type',
+        'required' => true, 
 	'options_values' => $jobSelectSalaryType,
 'value' => $vars['salary_type'],
 ));
@@ -170,6 +177,7 @@ $contact_email_input = elgg_view('input/text', array(
 $company_name_label = elgg_echo('job:board:company_name');
 $company_name_input = elgg_view('input/text', array(
 	'name' => 'company_name',
+        'required' => true,
 	'id' => 'job_company_name',
 	'value' => $vars['company_name']
 ));
@@ -178,6 +186,7 @@ $company_name_input = elgg_view('input/text', array(
 $company_location_label = elgg_echo('job:board:company_location');
 $company_location_input = elgg_view('input/text', array(
 	'name' => 'company_location',
+        'required' => true,
 	'id' => 'job_company_location',
 	'value' => $vars['company_location']
 ));
@@ -187,6 +196,7 @@ $company_address_label = elgg_echo('job:board:company_address');
 $company_address_input = elgg_view('input/text', array(
 	'name' => 'company_address',
 	'id' => 'job_company_address',
+        'required' => true,
 	'value' => $vars['company_address']
 ));
 
@@ -195,6 +205,7 @@ $company_website_label = elgg_echo('job:board:company_website');
 $company_website_input = elgg_view('input/text', array(
 	'name' => 'company_website',
 	'id' => 'job_company_website',
+        'required' => true,
 	'value' => $vars['company_website']
 ));
 
@@ -202,6 +213,7 @@ $expiration_date_label = elgg_echo('job:board:expiration_date');
 $expiration_date_input = elgg_view('input/date', array(
 	'name' => 'expiration_date',
 	'id' => 'job_expiration_date',
+        'required' => true,
 	'value' => $vars['expiration_date']
 ));
 

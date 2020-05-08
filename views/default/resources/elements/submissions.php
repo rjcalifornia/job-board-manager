@@ -103,8 +103,8 @@ echo elgg_echo('job:board:submissions');
                         <div style="
                              background: #a066ff !important; 
                              margin: 0 5px 5px 0; 
-                             padding: 8px 10px; border-radius: 3px; color: white; font-weight: 400;">
-                        <span class="fa elgg-icon-briefcase fa-briefcase"></span>        
+                             padding: 8px 8px; border-radius: 3px; color: white; font-weight: 400;">
+                        <span class="fa elgg-icon-download fa-download"></span>        
 
                         <?php  echo elgg_echo('job:board:view_resume');?>
 
@@ -125,7 +125,7 @@ echo elgg_echo('job:board:submissions');
 
 
 <?php
-    echo elgg_view('job-board-manager/datatables');
+  //  echo elgg_view('job-board-manager/datatables');
 ?>
     
   

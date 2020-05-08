@@ -8,7 +8,7 @@
 <style>
     td
 {
-    padding:0 6px;
+    padding:0 2px;
 }
 .company-name{
     color: #4d4d4d;
