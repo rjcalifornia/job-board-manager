@@ -6,7 +6,7 @@
  * @property string $comments_on Whether commenting is allowed (Off, On)
  * @property string $excerpt     An excerpt of the blog post used when displaying the post
  */
-class ElggJobBoardManager extends ElggObject {
+class ElggJobCandidates extends ElggObject {
 
 	/**
 	 * Set subtype to blog.
@@ -14,7 +14,7 @@ class ElggJobBoardManager extends ElggObject {
 	protected function initializeAttributes() {
 		parent::initializeAttributes();
 
-		$this->attributes['subtype'] = "job-board-manager";
+		$this->attributes['subtype'] = "job-candidates";
 	}
 
 	/**

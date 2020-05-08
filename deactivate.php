@@ -3,4 +3,4 @@
  * Deregister the ElggBlog class
  */
 
-update_subtype('object', 'job_board_manager');
+update_subtype('object', 'job-board-manager');
