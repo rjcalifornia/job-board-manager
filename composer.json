@@ -1,0 +1,10 @@
+{
+    "name": "elgg/job-board-manager",
+	"type": "elgg-plugin",
+	"description": "Adds job listing capabilities to Elgg",
+	"license": "GPL-2.0-only",
+	"keywords": ["jobs", "job manager"],
+    "require": {
+        "twig/twig": "^3.14"
+    }
+}
