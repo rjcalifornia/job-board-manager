@@ -15,23 +15,26 @@ if ($guid) {
 $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 
-
-$titleLabel = elgg_echo('job:add:title');
-$titleInput = elgg_view('input/text', array('name' => 'title', 'value' => $title));
+ 
+$titleField = elgg_view_field([
+    '#label' => elgg_echo('title'),
+		'#type' => 'text',
+		'required' => true,
+		'name' => 'title',
+		'value' => elgg_extract('title', $vars),
+]);
 
 $hiddenContainer = elgg_view('input/hidden', array('name' => 'container_guid', 'value' => $container_guid));
 
 $footer = elgg_view_field([
     '#type' => 'submit',
-    'id' => 'share',
-    'value' => elgg_echo('save'),
+    'text' => elgg_echo('save'),
 ]);
 
 
 
-
-$data['title_label'] = $titleLabel;
-$data['title_input'] = new \Twig\Markup($titleInput, 'UTF-8');
+ 
+$data['title_field'] = new \Twig\Markup($titleField, 'UTF-8');
 
 
 
