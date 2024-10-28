@@ -20,7 +20,9 @@ return [
                         ],
                 ],
         ],
-
+        'actions' => [
+		'job/save' => [],
+	],
 	'routes' => [
 
 		'add:object:job' => [
