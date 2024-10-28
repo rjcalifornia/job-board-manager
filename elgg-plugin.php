@@ -36,5 +36,10 @@ return [
 				\Elgg\Router\Middleware\PageOwnerGatekeeper::class,
 			],
                 ],
+
+                'view:object:job' => [
+			'path' => '/jobs/view/{guid}/{title?}',
+			'resource' => 'job/view',
+		],
 	],
 ];
