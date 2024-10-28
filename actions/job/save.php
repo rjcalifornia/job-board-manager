@@ -10,7 +10,7 @@ $guid = (int) get_input('guid');
 $container_guid = (int) get_input('container_guid', elgg_get_logged_in_user_guid());
 
  
-if (empty($title) || empty($address)) {
+if (empty($title)) {
 	return elgg_error_response(elgg_echo('job:save:failed'));
 }
 

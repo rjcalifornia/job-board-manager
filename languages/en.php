@@ -47,5 +47,5 @@ return array(
 	 * Error messages
 	 */
 
-	'job:save:failed' => "Your job could not be saved. Make sure you've entered a title and address and then try again.",
+	'job:save:failed' => "Your job could not be saved. Please try again.",
 );
