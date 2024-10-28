@@ -10,65 +10,42 @@ return array(
 	/**
 	 * Menu items and titles
 	 */
-	'item:object:bookmarks' => 'Bookmark',
-	'collection:object:bookmarks' => 'Bookmarks',
-	'collection:object:bookmarks:group' => 'Group bookmarks',
-	'collection:object:bookmarks:all' => "All site bookmarks",
-	'collection:object:bookmarks:owner' => "%s's bookmarks",
-	'collection:object:bookmarks:friends' => "Friends' bookmarks",
-	'add:object:bookmarks' => "Add a bookmark",
-	'edit:object:bookmarks' => "Edit bookmark",
-	'notification:object:bookmarks:create' => "Send a notification when a bookmark is created",
-	'notifications:mute:object:bookmarks' => "about the bookmark '%s'",
+	'item:object:job' => 'Bookmark',
+	'collection:object:job' => 'Bookmarks',
+	'collection:object:job:group' => 'Group jobs',
+	'collection:object:job:all' => "All site jobs",
+ 
+	'add:object:job' => "Add a job",
+	'edit:object:job' => "Edit job",
+	'job:add:title' => "Title",
+	'notification:object:job:create' => "Send a notification when a job is created",
+ 
 
-	'bookmarks:this' => "Bookmark this page",
-	'bookmarks:this:group' => "Bookmark in %s",
-	'bookmarks:bookmarklet' => "Get bookmarklet",
-	'bookmarks:bookmarklet:group' => "Get group bookmarklet",
-	'bookmarks:address' => "Address of the bookmark",
-	'bookmarks:none' => 'No bookmarks',
+	  
+	'job:none' => 'No jobs',
 
-	'bookmarks:notify:summary' => 'New bookmark called %s',
-	'bookmarks:notify:subject' => 'New bookmark: %s',
-	'bookmarks:notify:body' => '%s added a new bookmark: %s
+ 
+ 
+	'job:numbertodisplay' => 'Number of job to display',
 
-Address: %s
+	'river:object:job:create' => '%s bookmarked %s',
+	'river:object:job:comment' => '%s commented on a bookmark %s',
 
-%s
-
-View and comment on the bookmark:
-%s',
+	'groups:tool:job' => 'Enable group job',
+	'groups:tool:job:description' => 'Allow group members to share job in this group.',
 	
-	'notification:mentions:object:bookmarks:subject' => '%s mentioned you in a bookmark',
-	
-	'bookmarks:numbertodisplay' => 'Number of bookmarks to display',
-
-	'river:object:bookmarks:create' => '%s bookmarked %s',
-	'river:object:bookmarks:comment' => '%s commented on a bookmark %s',
-
-	'groups:tool:bookmarks' => 'Enable group bookmarks',
-	'groups:tool:bookmarks:description' => 'Allow group members to share bookmarks in this group.',
-	
-	/**
-	 * Widget and bookmarklet
-	 */
-	'widgets:bookmarks:name' => 'Bookmarks',
-	'widgets:bookmarks:description' => "Display your latest bookmarks.",
-
-	'bookmarks:bookmarklet:description' => "A bookmarklet is a special kind of button you save to your browser's links bar. This allows you to save any resource you find on the web to your bookmarks. To set it up, drag the button below to your browser's links bar:",
-	'bookmarks:bookmarklet:descriptionie' => "If you are using Internet Explorer, you will need to right click on the bookmarklet icon, select 'add to favorites', and then the Links bar.",
-	'bookmarks:bookmarklet:description:conclusion' => "You can then bookmark any page you visit by clicking the button in your browser at any time.",
-
+ 
+ 
 	/**
 	 * Status messages
 	 */
 
-	'bookmarks:save:success' => "Your item was successfully bookmarked.",
-	'entity:delete:object:bookmarks:success' => "The bookmark was deleted.",
+	'job:save:success' => "Your item was successfully created.",
+	'entity:delete:object:job:success' => "The job was deleted.",
 
 	/**
 	 * Error messages
 	 */
 
-	'bookmarks:save:failed' => "Your bookmark could not be saved. Make sure you've entered a title and address and then try again.",
+	'job:save:failed' => "Your job could not be saved. Make sure you've entered a title and address and then try again.",
 );
