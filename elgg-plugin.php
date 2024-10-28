@@ -24,7 +24,10 @@ return [
 		'job/save' => [],
 	],
 	'routes' => [
-
+                'default:object:jobs' => [
+			'path' => '/jobs',
+			'resource' => 'job/all',
+		],
 		'add:object:job' => [
                         'path' => '/job/add/{guid}',
                         'resource' => 'job/add',
