@@ -23,6 +23,7 @@ return array(
 
 	  
 	'job:none' => 'No jobs',
+	'job:overview' => 'About this role',
 
  
  

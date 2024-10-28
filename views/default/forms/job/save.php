@@ -16,12 +16,20 @@ $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 
  
-$titleField = elgg_view_field([
+$title = elgg_view_field([
     '#label' => elgg_echo('title'),
 		'#type' => 'text',
 		'required' => true,
 		'name' => 'title',
 		'value' => elgg_extract('title', $vars),
+]);
+
+$overview = elgg_view_field([
+    '#label' => elgg_echo('job:overview'),
+		'#type' => 'longtext',
+		'required' => true,
+		'name' => 'overview',
+		'value' => elgg_extract('overview', $vars),
 ]);
 
 $accesId = elgg_view_field([
@@ -55,7 +63,8 @@ $footer = elgg_view_field([
 
 
  
-$data['title_field'] = new \Twig\Markup($titleField, 'UTF-8');
+$data['title_field'] = new \Twig\Markup($title, 'UTF-8');
+$data['overview_field'] = new \Twig\Markup($overview, 'UTF-8');
 $data['access_id'] = new \Twig\Markup($accesId, 'UTF-8');
 
 
