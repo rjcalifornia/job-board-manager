@@ -28,7 +28,8 @@ if ($entity->status && $entity->status !== 'published') {
 
 if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
-	$data['entity'] = $entity->toObject();
+	$data['overview'] = $entity->overview;
+	$data['qualifications'] = $entity->qualifications;
 
 	echo $twig->render(
 		'pages/view.html.twig',
