@@ -1,6 +1,6 @@
 <?php
 
-namespace Elgg\Blog\Menus;
+namespace Elgg\Job\Menus;
 
 /**
  * Event callbacks for menus
