@@ -27,7 +27,7 @@ if ($entity->status && $entity->status !== 'published') {
 
 if (elgg_extract('full_view', $vars)) {
 	$body = elgg_view('output/longtext', [
-		'value' => $entity->description,
+		'value' => $entity->overview,
 		'class' => 'blog-post',
 	]);
 
@@ -43,7 +43,7 @@ if (elgg_extract('full_view', $vars)) {
 } else {
 	// brief view
 	$params = [
-		'content' => 'AAAAAAAAAAAAAAAAAAAAAAAAtest',
+		'content' => $entity->overview,
 		'icon' => true,
 	];
 	$params = $params + $vars;

@@ -1,7 +1,6 @@
 <?php
 
 $guid = (int) elgg_extract('guid', $vars);
-
 elgg_entity_gatekeeper($guid, 'object', 'job');
 
 $entity = get_entity($guid);
@@ -13,9 +12,11 @@ echo elgg_view_page($entity->getDisplayName(), [
 		'full_view' => true,
 		'show_responses' => true,
 	]),
+	'filter_id' => 'job/view',
 	'entity' => $entity,
-	'sidebar' => elgg_view('object/job/elements/sidebar', [
+	'sidebar' => elgg_view('object/blog/elements/sidebar', [
 		'entity' => $entity,
 	]),
-	 
+], 'default', [
+	'entity' => $entity,
 ]);
