@@ -3,7 +3,7 @@
 /**
  * Elgg Jobs
  *
- * @property string $address URL of bookmark
+ * @property string $address URL of job
  */
 class ElggJob extends ElggObject {
 

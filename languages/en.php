@@ -10,8 +10,8 @@ return array(
 	/**
 	 * Menu items and titles
 	 */
-	'item:object:job' => 'Bookmark',
-	'collection:object:job' => 'Bookmarks',
+	'item:object:job' => 'Jobs',
+	'collection:object:job' => 'Jobs',
 	'collection:object:job:group' => 'Group jobs',
 	'collection:object:job:all' => "All site jobs",
  
@@ -24,6 +24,7 @@ return array(
 	  
 	'job:none' => 'No jobs',
 	'job:overview' => 'About this role',
+	'menu:title:object:job' => 'Jobs',
 
  
  

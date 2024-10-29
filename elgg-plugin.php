@@ -3,6 +3,8 @@
 require_once(__DIR__ . '/lib/functions.php');
 
 return [
+
+	//Plugin information
         'plugin' => [
 		'name' => 'Job Manager',
 		'activate_on_install' => false,
@@ -11,7 +13,7 @@ return [
                 [
                         'type' => 'object',
                         'subtype' => 'job',
-                        'class' => 'ElggJob',
+                        'class' => '\ElggJob',
                         'capabilities' => [
                                 'commentable' => true,
 				'searchable' => true,
@@ -23,9 +25,16 @@ return [
         'actions' => [
 		'job/save' => [],
 	],
+
+	//Plugin routes. It would be better to have a routes files, like in Laravel though.
 	'routes' => [
                 'default:object:jobs' => [
 			'path' => '/jobs',
+			'resource' => 'job/all',
+		],
+
+		'collection:object:bookmarks:job' => [
+			'path' => '/jobs/all',
 			'resource' => 'job/all',
 		],
 		'add:object:job' => [
@@ -37,9 +46,30 @@ return [
 			],
                 ],
 
-                'view:object:job' => [
+		'view:object:job' => [
 			'path' => '/jobs/view/{guid}/{title?}',
 			'resource' => 'job/view',
 		],
 	],
+
+	//Site menu
+	'events' => [
+
+		//Register menu here
+		'register' => [
+			'menu:site' => [
+				'Elgg\Job\Menus\Site::register' => [],
+			],
+
+		'menu:owner_block' => [
+				'Elgg\Job\Menus\OwnerBlock::registerUserItem' => [],
+				 
+			],
+
+		'menu:title:object:job' => [
+				\Elgg\Notifications\RegisterSubscriptionMenuItemsHandler::class => [],
+			],
+		],
+
+	]
 ];
