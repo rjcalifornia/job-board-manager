@@ -5,6 +5,11 @@
 
 $title = elgg_get_title_input();
 $overview = get_input('overview');
+$qualifications = get_input('qualifications');
+$responsabilities = get_input('responsabilities');
+$salary = get_input('salary');
+$job_type = get_input('job_type');
+ 
 $access_id = (int) get_input('access_id');
 
 $guid = (int) get_input('guid');
@@ -31,6 +36,10 @@ if (empty($guid)) {
 
 $job->title = $title;
 $job->overview = $overview;
+$job->qualifications = $qualifications;
+$job->responsabilities = $responsabilities;
+$job->salary = $salary;
+$job->job_type = $job_type;
  
 $job->access_id = $access_id;
  
