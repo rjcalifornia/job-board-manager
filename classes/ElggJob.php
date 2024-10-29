@@ -15,4 +15,10 @@ class ElggJob extends ElggObject {
 
 		$this->attributes['subtype'] = 'job';
 	}
+
+	public function getSummary(int $length = 250): string {
+		$summary = $this->overview ;
+		
+		return elgg_get_excerpt((string) $summary, $length);
+	}
 }

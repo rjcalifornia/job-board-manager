@@ -45,7 +45,7 @@ if (elgg_extract('full_view', $vars)) {
 } else {
 	// brief view
 	$params = [
-		'content' => $entity->overview,
+		'content' => $entity->getSummary(),
 		'icon' => true,
 	];
 	$params = $params + $vars;
