@@ -1,4 +1,5 @@
 <?php
+
 /**
  * View for blog objects
  *
@@ -20,26 +21,21 @@ if ($entity->status && $entity->status !== 'published') {
 		'content' => elgg_echo("status:{$entity->status}"),
 		'class' => 'elgg-listing-blog-status',
 	];
-	
+
 	// Show the access the blog will have when published
 	$vars['access'] = $entity->future_access;
 }
 
 if (elgg_extract('full_view', $vars)) {
-	$body = elgg_view('output/longtext', [
-		'value' => $entity->overview,
-		'class' => 'blog-post',
-	]);
+	$twig = jobs_twig();
+	$data['entity'] = $entity->toObject();
 
-	$params = [
-		'icon' => true,
-		'body' => $body,
-		'show_summary' => true,
-		'show_navigation' => true,
-	];
-	$params = $params + $vars;
-	
-	echo elgg_view('object/elements/full', $params);
+	echo $twig->render(
+		'pages/view.html.twig',
+		[
+			'data' => $data,
+		]
+	);
 } else {
 	// brief view
 	$params = [
