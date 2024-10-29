@@ -13,7 +13,7 @@ return [
                 [
                         'type' => 'object',
                         'subtype' => 'job',
-                        'class' => '\ElggJob',
+                        'class' => 'ElggJob',
                         'capabilities' => [
                                 'commentable' => true,
 				'searchable' => true,
@@ -28,12 +28,12 @@ return [
 
 	//Plugin routes. It would be better to have a routes files, like in Laravel though.
 	'routes' => [
-                'default:object:jobs' => [
+                'default:object:job' => [
 			'path' => '/jobs',
 			'resource' => 'job/all',
 		],
 
-		'collection:object:bookmarks:job' => [
+		'collection:object:job:all' => [
 			'path' => '/jobs/all',
 			'resource' => 'job/all',
 		],
