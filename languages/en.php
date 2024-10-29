@@ -24,6 +24,7 @@ return array(
 	  
 	'job:none' => 'No jobs',
 	'job:overview' => 'About this role',
+	'job:qualifications' => 'Qualifications',
 	'menu:title:object:job' => 'Jobs',
 
  

@@ -28,6 +28,11 @@ if ($entity->status && $entity->status !== 'published') {
 
 if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
+
+	$data['labels'] = [
+		'overview' => elgg_echo('job:overview'),
+		'qualifications' => elgg_echo('job:qualifications'),
+	];
 	$data['overview'] = $entity->overview;
 	$data['qualifications'] = $entity->qualifications;
 
