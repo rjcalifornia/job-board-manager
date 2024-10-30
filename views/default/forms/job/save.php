@@ -16,9 +16,8 @@ $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 
 $options =[
-    'Full time',
-    'Part time',
-    'Per hours'
+    'Full time' =>    'Fulltime',
+    'Part time' => 'Part time',
 ];
  
 $title = elgg_view_field([
