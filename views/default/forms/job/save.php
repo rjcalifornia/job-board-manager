@@ -16,8 +16,11 @@ $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 
 $options =[
-    'Full time' =>    elgg_echo('job:fulltime'),
-    'Part time' =>  elgg_echo('job:parttime'),
+    elgg_echo('job:fulltime') =>    elgg_echo('job:fulltime'),
+    elgg_echo('job:parttime') =>  elgg_echo('job:parttime'),
+    elgg_echo('job:freelance') =>  elgg_echo('job:freelance'),
+    elgg_echo('job:intership') =>  elgg_echo('job:intership'),
+    elgg_echo('job:temporary') =>  elgg_echo('job:temporary'),
 ];
 
 $experience =[
@@ -51,6 +54,14 @@ $title = elgg_view_field([
     'required' => true,
     'name' => 'title',
     'value' => elgg_extract('title', $vars),
+]);
+
+$deadline = elgg_view_field([
+    '#label' => elgg_echo('job:deadline'),
+    '#type' => 'date',
+    'required' => false,
+    'name' => 'deadline',
+    'value' => elgg_extract('deadline', $vars),
 ]);
 
 $overview = elgg_view_field([
@@ -156,6 +167,7 @@ $data['title_field'] = new \Twig\Markup($title, 'UTF-8');
 $data['overview_field'] = new \Twig\Markup($overview, 'UTF-8');
 $data['qualifications_field'] = new \Twig\Markup($qualifications, 'UTF-8');
 $data['responsabilities_field'] = new \Twig\Markup($responsabilities, 'UTF-8');
+$data['deadline_field'] = new \Twig\Markup($deadline, 'UTF-8');
 $data['location_field'] = new \Twig\Markup($location, 'UTF-8');
 $data['salary_field'] = new \Twig\Markup($salary, 'UTF-8');
 $data['experience_field'] = new \Twig\Markup($jobExperience, 'UTF-8');

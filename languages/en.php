@@ -11,18 +11,19 @@ return array(
 	 * Menu items and titles
 	 */
 	'item:object:job' => 'Jobs',
+	'menu:title:object:job' => 'Jobs',
 	'collection:object:job' => 'Jobs',
 	'collection:object:job:group' => 'Group jobs',
 	'collection:object:job:all' => "All site jobs",
  
 	'add:object:job' => "Add a job",
 	'edit:object:job' => "Edit job",
-	'job:add:title' => "Title",
 	'notification:object:job:create' => "Send a notification when a job is created",
  
 
 	  
 	'job:none' => 'No jobs',
+	'job:add:title' => "Title",
 	'job:overview' => 'About this role',
 	'job:qualifications' => 'Job requirements',
 	'job:responsabilities' => 'Responsabilities',
@@ -30,11 +31,18 @@ return array(
 	'job:salary' => 'Expected salary',
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
-	'job:parttime' => 'Part time',
-	'job:fulltime' => 'Full time',
+	'job:deadline' => 'Job expiration date',
+	'job:total_openings' => 'Total openings',
 	'job:experience' => 'Experience',
-	'menu:title:object:job' => 'Jobs',
 
+
+
+
+	'job:fulltime' => 'Full Time',	
+	'job:freelance' => 'Freelance',
+	'job:intership' => 'Internship',
+	'job:parttime' => 'Part Time',
+	'job:temporary' => 'Temporary',
  
  
 	'job:numbertodisplay' => 'Number of job to display',
