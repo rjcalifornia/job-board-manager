@@ -25,7 +25,10 @@ return array(
 	'job:none' => 'No jobs',
 	'job:overview' => 'About this role',
 	'job:qualifications' => 'Job requirements',
+	'job:responsabilities' => 'Responsabilities',
+	'job:salary' => 'Expected salary',
 	'job:type' => 'Job type',
+	'job:skills' => 'Skills',
 	'menu:title:object:job' => 'Jobs',
 
  
