@@ -77,6 +77,14 @@ $responsabilities = elgg_view_field([
     'value' => elgg_extract('responsabilities', $vars),
 ]);
 
+$location = elgg_view_field([
+    '#label' => elgg_echo('job:location'),
+    '#type' => 'text',
+    'required' => false,
+    'name' => 'location',
+    'value' => elgg_extract('location', $vars),
+]);
+
 $salary = elgg_view_field([
     '#label' => elgg_echo('job:salary'),
     '#type' => 'text',
@@ -148,6 +156,7 @@ $data['title_field'] = new \Twig\Markup($title, 'UTF-8');
 $data['overview_field'] = new \Twig\Markup($overview, 'UTF-8');
 $data['qualifications_field'] = new \Twig\Markup($qualifications, 'UTF-8');
 $data['responsabilities_field'] = new \Twig\Markup($responsabilities, 'UTF-8');
+$data['location_field'] = new \Twig\Markup($location, 'UTF-8');
 $data['salary_field'] = new \Twig\Markup($salary, 'UTF-8');
 $data['experience_field'] = new \Twig\Markup($jobExperience, 'UTF-8');
 $data['type_field'] = new \Twig\Markup($jobType, 'UTF-8');

@@ -9,12 +9,14 @@ $qualifications = get_input('qualifications');
 $responsabilities = get_input('responsabilities');
 $salary = get_input('salary');
 $job_type = get_input('job_type');
- 
+$location = get_input('location');
+$experience = get_input('job_experience');
 $access_id = (int) get_input('access_id');
+$tags = get_input('tags');
 
 $guid = (int) get_input('guid');
 $container_guid = (int) get_input('container_guid', elgg_get_logged_in_user_guid());
-
+$tagarray = elgg_string_to_array($tags);
  
 if (empty($title)) {
 	return elgg_error_response(elgg_echo('job:save:failed'));
@@ -40,7 +42,9 @@ $job->qualifications = $qualifications;
 $job->responsabilities = $responsabilities;
 $job->salary = $salary;
 $job->job_type = $job_type;
- 
+$job->location = $location;
+$job->experience = $experience;
+$job->tags = $tagarray;
 $job->access_id = $access_id;
  
 

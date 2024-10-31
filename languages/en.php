@@ -26,6 +26,7 @@ return array(
 	'job:overview' => 'About this role',
 	'job:qualifications' => 'Job requirements',
 	'job:responsabilities' => 'Responsabilities',
+	'job:location' => 'Location',
 	'job:salary' => 'Expected salary',
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
