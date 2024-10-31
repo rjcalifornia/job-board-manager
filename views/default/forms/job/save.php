@@ -47,6 +47,11 @@ $experience =[
      
 ];
  
+
+$salaryType =[
+    elgg_echo('job:negotiable') => elgg_echo('job:negotiable'),
+    elgg_echo('job:fixed') => elgg_echo('job:fixed'),
+];
  
 $title = elgg_view_field([
     '#label' => elgg_echo('title'),
@@ -103,6 +108,17 @@ $salary = elgg_view_field([
     'name' => 'salary',
     'value' => elgg_extract('salary', $vars),
 ]);
+
+$salaryType = elgg_view_field([
+    '#label' => elgg_echo('job:salary_type'),
+    '#type' => 'select',
+    'required' => true,
+    'name' => 'salary_type',
+    'options_values' => $salaryType,
+    'value' => elgg_extract('salary_type', $vars),
+    'multiple' => false,
+]);
+
 
 $jobType = elgg_view_field([
     '#label' => elgg_echo('job:type'),
@@ -170,6 +186,7 @@ $data['responsabilities_field'] = new \Twig\Markup($responsabilities, 'UTF-8');
 $data['deadline_field'] = new \Twig\Markup($deadline, 'UTF-8');
 $data['location_field'] = new \Twig\Markup($location, 'UTF-8');
 $data['salary_field'] = new \Twig\Markup($salary, 'UTF-8');
+$data['salary_type_field'] = new \Twig\Markup($salaryType, 'UTF-8');
 $data['experience_field'] = new \Twig\Markup($jobExperience, 'UTF-8');
 $data['type_field'] = new \Twig\Markup($jobType, 'UTF-8');
 $data['tags_field'] = new \Twig\Markup($tags, 'UTF-8');

@@ -43,6 +43,11 @@ return array(
 	'job:intership' => 'Internship',
 	'job:parttime' => 'Part Time',
 	'job:temporary' => 'Temporary',
+
+
+	'job:salary_type' => 'Salary type',
+	'job:negotiable' => 'Negotiable Salary',
+	'job:fixed' => 'Fixed Salary',
  
  
 	'job:numbertodisplay' => 'Number of job to display',
