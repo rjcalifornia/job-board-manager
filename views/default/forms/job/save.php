@@ -16,9 +16,34 @@ $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 
 $options =[
-    'Full time' =>    'Fulltime',
-    'Part time' => 'Part time',
+    'Full time' =>    elgg_echo('job:fulltime'),
+    'Part time' =>  elgg_echo('job:parttime'),
 ];
+
+$experience =[
+    '1' =>    '1 year',
+    '2' =>    '2 years',
+    '3' =>    '3 years',
+    '4' =>    '4 years',
+    '5' =>    '5 years',
+    '6' =>    '6 years',
+    '7' =>    '7 years',
+    '8' =>    '8 years',
+    '9' =>    '9 years',
+    '10' =>    '10 years',
+    '11' =>    '11 years',
+    '12' =>    '12 years',
+    '13' =>    '13 years',
+    '14' =>    '14 years',
+    '15' =>    '15 years',
+    '16' =>    '16 years',
+    '17' =>    '17 years',
+    '18' =>    '18 years',
+    '19' =>    '19 years',
+    '20' =>    '20 years',
+     
+];
+ 
  
 $title = elgg_view_field([
     '#label' => elgg_echo('title'),
@@ -70,6 +95,16 @@ $jobType = elgg_view_field([
     'multiple' => false,
 ]);
 
+$jobExperience = elgg_view_field([
+    '#label' => elgg_echo('job:experience'),
+    '#type' => 'select',
+    'required' => true,
+    'name' => 'job_experience',
+    'options_values' => $experience,
+    'value' => elgg_extract('job_experience', $vars),
+    'multiple' => false,
+]);
+
 $tags = elgg_view_field([
     '#label' => elgg_echo('job:skills'),
     '#type' => 'tags',
@@ -114,6 +149,7 @@ $data['overview_field'] = new \Twig\Markup($overview, 'UTF-8');
 $data['qualifications_field'] = new \Twig\Markup($qualifications, 'UTF-8');
 $data['responsabilities_field'] = new \Twig\Markup($responsabilities, 'UTF-8');
 $data['salary_field'] = new \Twig\Markup($salary, 'UTF-8');
+$data['experience_field'] = new \Twig\Markup($jobExperience, 'UTF-8');
 $data['type_field'] = new \Twig\Markup($jobType, 'UTF-8');
 $data['tags_field'] = new \Twig\Markup($tags, 'UTF-8');
 $data['access_id'] = new \Twig\Markup($accesId, 'UTF-8');

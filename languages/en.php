@@ -29,6 +29,9 @@ return array(
 	'job:salary' => 'Expected salary',
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
+	'job:parttime' => 'Part time',
+	'job:fulltime' => 'Full time',
+	'job:experience' => 'Experience',
 	'menu:title:object:job' => 'Jobs',
 
  
