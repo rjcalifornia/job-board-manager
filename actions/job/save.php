@@ -2,6 +2,9 @@
 /**
  * Elgg job save action
  */
+use JobUtils;
+
+$jobUtils = new JobUtils;
 
 $title = elgg_get_title_input();
 $overview = get_input('overview');
@@ -17,6 +20,7 @@ $deadline = get_input('deadline');
 $access_id = (int) get_input('access_id');
 $status = get_input('status');
 $tags = get_input('tags');
+
 
 $guid = (int) get_input('guid');
 $container_guid = (int) get_input('container_guid', elgg_get_logged_in_user_guid());
@@ -54,6 +58,7 @@ $job->deadline = $deadline;
 $job->tags = $tagarray;
 $job->status = $status;
 $job->access_id = $access_id;
+$job->correlative = $jobUtils->generateIdentifier();
  
 
 if (!$job->save()) {

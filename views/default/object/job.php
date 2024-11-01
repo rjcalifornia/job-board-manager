@@ -35,9 +35,9 @@ if (elgg_extract('full_view', $vars)) {
 		'type' => elgg_echo('job:type'),
 		'openings' => elgg_echo('job:openings'),
 	];
-	 
-	 
+	
 	$data = [
+		'correlative' => $entity->correlative,
 		'overview' => $entity->overview,
 		'qualifications' => $entity->qualifications,
 		'job_type' => $entity->job_type,
