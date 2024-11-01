@@ -8,10 +8,14 @@ $overview = get_input('overview');
 $qualifications = get_input('qualifications');
 $responsabilities = get_input('responsabilities');
 $salary = get_input('salary');
+$salary_type = get_input('salary_type');
 $job_type = get_input('job_type');
 $location = get_input('location');
 $experience = get_input('job_experience');
+$openings = get_input('openings');
+$deadline = get_input('deadline');
 $access_id = (int) get_input('access_id');
+$status = get_input('status');
 $tags = get_input('tags');
 
 $guid = (int) get_input('guid');
@@ -40,11 +44,15 @@ $job->title = $title;
 $job->overview = $overview;
 $job->qualifications = $qualifications;
 $job->responsabilities = $responsabilities;
-$job->salary = $salary;
 $job->job_type = $job_type;
-$job->location = $location;
 $job->experience = $experience;
+$job->salary = $salary;
+$job->location = $location;
+$job->salary_type = $salary_type;
+$job->openings = $openings;
+$job->deadline = $deadline;
 $job->tags = $tagarray;
+$job->status = $status;
 $job->access_id = $access_id;
  
 

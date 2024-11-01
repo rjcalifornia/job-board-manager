@@ -63,7 +63,7 @@ $title = elgg_view_field([
 $deadline = elgg_view_field([
     '#label' => elgg_echo('job:deadline'),
     '#type' => 'date',
-    'required' => false,
+    'required' => true,
     'name' => 'deadline',
     'value' => elgg_extract('deadline', $vars),
 ]);
@@ -95,7 +95,7 @@ $responsabilities = elgg_view_field([
 $location = elgg_view_field([
     '#label' => elgg_echo('job:location'),
     '#type' => 'text',
-    'required' => false,
+    'required' => true,
     'name' => 'location',
     'value' => elgg_extract('location', $vars),
 ]);
@@ -103,7 +103,7 @@ $location = elgg_view_field([
 $openings = elgg_view_field([
     '#label' => elgg_echo('job:openings'),
     '#type' => 'text',
-    'required' => false,
+    'required' => true,
     'name' => 'openings',
     'value' => elgg_extract('openings', $vars),
 ]);
@@ -111,7 +111,7 @@ $openings = elgg_view_field([
 $salary = elgg_view_field([
     '#label' => elgg_echo('job:salary'),
     '#type' => 'text',
-    'required' => false,
+    'required' => true,
     'name' => 'salary',
     'value' => elgg_extract('salary', $vars),
 ]);
@@ -147,6 +147,19 @@ $jobExperience = elgg_view_field([
     'multiple' => false,
 ]);
 
+$status = elgg_view_field([
+    '#label' => elgg_echo('status'),
+    '#type' => 'select',
+    'required' => true,
+    'name' => 'status',
+    'options_values' => [
+        'draft' => elgg_echo('status:draft'),
+		'published' => elgg_echo('status:published')
+    ],
+    'value' => elgg_extract('status', $vars),
+    'multiple' => false,
+]);
+
 $tags = elgg_view_field([
     '#label' => elgg_echo('job:skills'),
     '#type' => 'tags',
@@ -163,6 +176,7 @@ $accesId = elgg_view_field([
     'entity' => elgg_extract('entity', $vars),
     'entity_type' => 'object',
     'entity_subtype' => 'bookmarks',
+    'required' => true,
 ],);
 
 $container = elgg_view_field([
@@ -199,6 +213,7 @@ $data['experience_field'] = new \Twig\Markup($jobExperience, 'UTF-8');
 $data['type_field'] = new \Twig\Markup($jobType, 'UTF-8');
 $data['tags_field'] = new \Twig\Markup($tags, 'UTF-8');
 $data['access_id'] = new \Twig\Markup($accesId, 'UTF-8');
+$data['status'] = new \Twig\Markup($status, 'UTF-8');
 
 
 
