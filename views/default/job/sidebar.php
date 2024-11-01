@@ -3,7 +3,13 @@
  * Jobs sidebar
  */
 $twig = jobs_twig();
-$data = [];
+$view_mode = elgg_extract('single', $vars);
+$data = [
+    'view_mode' => $view_mode
+];
+
+
+
 
  echo $twig->render(
     'elements/sidebar.html.twig',

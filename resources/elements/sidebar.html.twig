@@ -1,7 +1,13 @@
 <div>
 <p>
+{% if data.view_mode == true %}
     <h3>
-    Latest jobs
+  Similar jobs
     </h3>
+    {% else %}
+    <h2>
+      Latest jobs
+    </h2>
+    {% endif %}
     </p>
 </div>

@@ -5,6 +5,7 @@
 	"license": "GPL-2.0-only",
 	"keywords": ["jobs", "job manager"],
     "require": {
-        "twig/twig": "^3.14"
+        "twig/twig": "^3.14",
+        "ramsey/uuid": "^4.7"
     }
 }

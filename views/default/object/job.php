@@ -33,6 +33,7 @@ if (elgg_extract('full_view', $vars)) {
 		'overview' => elgg_echo('job:overview'),
 		'qualifications' => elgg_echo('job:qualifications'),
 		'type' => elgg_echo('job:type'),
+		'openings' => elgg_echo('job:openings'),
 	];
 	 
 	 
@@ -40,6 +41,7 @@ if (elgg_extract('full_view', $vars)) {
 		'overview' => $entity->overview,
 		'qualifications' => $entity->qualifications,
 		'job_type' => $entity->job_type,
+		'openings' => $entity->openings,
 	];
 
 	echo $twig->render(

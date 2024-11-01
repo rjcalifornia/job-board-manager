@@ -14,8 +14,9 @@ echo elgg_view_page($entity->getDisplayName(), [
 	]),
 	'filter_id' => 'job/view',
 	'entity' => $entity,
-	'sidebar' => elgg_view('object/job/elements/sidebar', [
+	'sidebar' => elgg_view('job/sidebar', [
 		'entity' => $entity,
+		'single' => true,
 	]),
 ], 'default', [
 	'entity' => $entity,
