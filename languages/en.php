@@ -32,9 +32,9 @@ return array(
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
 	'job:deadline' => 'Job expiration date',
-	'job:total_openings' => 'Total openings',
+	'job:openings' => 'Total openings',
 	'job:experience' => 'Years of experience',
-
+	'job:published' => 'Publish date',
 
 
 
