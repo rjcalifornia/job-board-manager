@@ -59,6 +59,7 @@ if (elgg_extract('full_view', $vars)) {
 		'experience' => $entity->experience,
 		'status' => $jobStatus,
 		'published' => date(("F j, Y"),$entity->time_created),
+		'categories' => $entity->tags,
 	];
 
 	echo $twig->render(
