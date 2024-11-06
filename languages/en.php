@@ -33,7 +33,7 @@ return array(
 	'job:skills' => 'Skills',
 	'job:deadline' => 'Job expiration date',
 	'job:openings' => 'Openings',
-	'job:experience' => 'Years of experience',
+	'job:experience' => 'Experience',
 	'job:published' => 'Publish date',
 	'job:open' => 'Available',
 	'job:closed' => 'Closed',

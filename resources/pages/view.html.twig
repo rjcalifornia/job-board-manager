@@ -3,7 +3,7 @@
      <div class="grid  sm:grid-cols-1  lg:grid-cols-6 gap-0 pb-8 pt-2">
           <div>
                <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 shadow-md hover:shadow-lg ">
-                    <i class="bi bi-calendar-check-fill"></i>&nbsp;
+                    <i class="bi bi-check-circle-fill"></i>&nbsp;
                     {{data.status}}
                </span>
                </div>
@@ -47,21 +47,46 @@
      <div class="pb-4">
           <div class="font-semibold text-lg pb-2"> 
 
-          <i class="bi bi-card-checklist"></i> {{labels.qualifications}} 
+          <i class="bi bi-clipboard-check-fill"></i> {{labels.qualifications}} 
           </div>
           <span class="text-justify">
           {{data.qualifications|raw}}
           </span>
      </div>
-     <h3> 
-          {{labels.type}} 
-     </h3>
-     {{data.job_type}}
 
-     <h3> 
-          {{labels.openings}} 
-     </h3>
-     {{data.openings}}
+     <div class="pb-4">
+          <div class="font-semibold text-lg pb-2"> 
+
+          <i class="bi bi-box-seam-fill"></i> {{labels.type}} 
+          </div>
+          <span class="text-justify">
+          {{data.job_type}}
+          </span>
+     </div>
+
+     <div class="pb-4">
+          <div class="font-semibold text-lg pb-2"> 
+
+          <i class="bi bi-calendar2-week-fill"></i> {{labels.experience}} 
+          </div>
+          <span class="text-justify">
+          {{data.experience}}+ years
+          </span>
+     </div>
+
+     <div class="pb-4">
+          <div class="font-semibold text-lg pb-2"> 
+
+          <i class="bi bi-calendar-check-fill"></i> {{labels.published}} 
+          </div>
+          <span class="text-justify">
+          {{data.published}}
+          </span>
+     </div>
+      
+     
+
+     
 
 </div>
 <script src="https://cdn.tailwindcss.com"></script>

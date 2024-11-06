@@ -44,6 +44,8 @@ if (elgg_extract('full_view', $vars)) {
 		'type' => elgg_echo('job:type'),
 		'openings' => elgg_echo('job:openings'),
 		'salary' => elgg_echo('job:salary'),
+		'experience' => elgg_echo('job:experience'),
+		'published' => elgg_echo('job:published'),
 	];
 	
 	$data = [
@@ -54,7 +56,9 @@ if (elgg_extract('full_view', $vars)) {
 		'openings' => $entity->openings,
 		'location' => $entity->location,
 		'salary' => $entity->salary,
+		'experience' => $entity->experience,
 		'status' => $jobStatus,
+		'published' => date(("F j, Y"),$entity->time_created),
 	];
 
 	echo $twig->render(
