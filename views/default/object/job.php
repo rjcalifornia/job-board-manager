@@ -26,6 +26,15 @@ if ($entity->status && $entity->status !== 'published') {
 	$vars['access'] = $entity->future_access;
 }
 
+switch($entity->status){
+	case 'published':
+		$jobStatus =  elgg_echo('job:open');
+		break;
+	default:
+		$jobStatus = elgg_echo('job:closed');
+
+}
+
 if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
 
@@ -45,6 +54,7 @@ if (elgg_extract('full_view', $vars)) {
 		'openings' => $entity->openings,
 		'location' => $entity->location,
 		'salary' => $entity->salary,
+		'status' => $jobStatus,
 	];
 
 	echo $twig->render(

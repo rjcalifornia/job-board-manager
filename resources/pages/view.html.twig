@@ -1,54 +1,68 @@
-<div class="grid  sm:grid-cols-1  lg:grid-cols-5 gap-1 pb-8 pt-4">
-  <div>
+<div class="m-8">
+
+     <div class="grid  sm:grid-cols-1  lg:grid-cols-6 gap-0 pb-8 pt-2">
+          <div>
+               <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 shadow-md hover:shadow-lg ">
+                    <i class="bi bi-calendar-check-fill"></i>&nbsp;
+                    {{data.status}}
+               </span>
+               </div>
+          <div>
+               
+               <span class="inline-flex items-center rounded-md  bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 shadow-md hover:shadow-lg ">
+               <i class="bi bi-pin-map-fill"></i>&nbsp;
+               {{data.location}}
+               </span>
+
+          </div>
+
+          <div>
+          <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 shadow-md hover:shadow-lg ">
+               <i class="bi bi-people-fill"></i>&nbsp;
+               {{labels.openings}}: {{data.openings}}
+          </span>
+          </div>
+
+          <div>
+          <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 shadow-md hover:shadow-lg ">
+          <i class="bi bi-cash-coin"></i>&nbsp;
+          {{labels.salary}}: {{data.salary}}
+          </span>
+
+          </div>
+
      
-     <span class="inline-flex items-center rounded-md  bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 shadow-md hover:shadow-lg ">
-     <i class="bi bi-pin-map-fill"></i>&nbsp;
-     {{data.location}}
-     </span>
 
-  </div>
+     </div>
 
-  <div>
-  <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 shadow-md hover:shadow-lg ">
-     <i class="bi bi-people-fill"></i>&nbsp;
-     {{labels.openings}}: {{data.openings}}
-  </span>
-  </div>
+     <div class="pb-6">
+          <div class="font-semibold text-lg pb-2"> 
+               <i class="bi bi-info-circle-fill"></i> {{labels.overview}}
+          </div>
+          <span class="text-justify">
+               {{data.overview|raw}}
+          </span>
+     </div>
 
-  <div>
-  <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 shadow-md hover:shadow-lg ">
-  <i class="bi bi-cash-coin"></i>&nbsp;
-  {{labels.salary}}: {{data.salary}}
-  </span>
+     <div class="pb-4">
+          <div class="font-semibold text-lg pb-2"> 
 
-  </div>
- 
+          <i class="bi bi-card-checklist"></i> {{labels.qualifications}} 
+          </div>
+          <span class="text-justify">
+          {{data.qualifications|raw}}
+          </span>
+     </div>
+     <h3> 
+          {{labels.type}} 
+     </h3>
+     {{data.job_type}}
+
+     <h3> 
+          {{labels.openings}} 
+     </h3>
+     {{data.openings}}
 
 </div>
-
-<div>
-<h3> 
-  <i class="bi bi-archive"></i> {{labels.overview}}
-</h3>
- {{data.overview|raw}}
-</div>
-
-<h3> 
-
-     {{labels.qualifications}} 
-</h3>
- {{data.qualifications|raw}}
-
- <h3> 
-     {{labels.type}} 
-</h3>
- {{data.job_type}}
-
- <h3> 
-     {{labels.openings}} 
-</h3>
-  {{data.openings}}
-
-
 <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

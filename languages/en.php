@@ -28,13 +28,15 @@ return array(
 	'job:qualifications' => 'Job requirements',
 	'job:responsabilities' => 'Responsabilities',
 	'job:location' => 'Location',
-	'job:salary' => 'Expected salary',
+	'job:salary' => 'Salary',
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
 	'job:deadline' => 'Job expiration date',
 	'job:openings' => 'Total openings',
 	'job:experience' => 'Years of experience',
 	'job:published' => 'Publish date',
+	'job:open' => 'Available',
+	'job:closed' => 'Closed',
 
 
 
