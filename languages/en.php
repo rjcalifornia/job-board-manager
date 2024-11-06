@@ -24,7 +24,7 @@ return array(
 	  
 	'job:none' => 'No jobs',
 	'job:add:title' => "Title",
-	'job:overview' => 'About this role',
+	'job:overview' => 'About the role',
 	'job:qualifications' => 'Job requirements',
 	'job:responsabilities' => 'Responsabilities',
 	'job:location' => 'Location',
@@ -32,7 +32,7 @@ return array(
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
 	'job:deadline' => 'Job expiration date',
-	'job:openings' => 'Total openings',
+	'job:openings' => 'Openings',
 	'job:experience' => 'Years of experience',
 	'job:published' => 'Publish date',
 	'job:open' => 'Available',
