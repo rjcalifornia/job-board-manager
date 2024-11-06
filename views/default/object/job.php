@@ -60,6 +60,7 @@ if (elgg_extract('full_view', $vars)) {
 		'status' => $jobStatus,
 		'published' => date(("F j, Y"),$entity->time_created),
 		'categories' => $entity->tags,
+		'site_url' =>  elgg_get_site_url(),
 	];
 
 	echo $twig->render(

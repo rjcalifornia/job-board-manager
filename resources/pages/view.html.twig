@@ -87,18 +87,21 @@
      
     <div class="flex flex-wrap justify-start pt-12">
      {% for category in data.categories %}
-         
+          <a href="{{data.site_url}}search?q={{category}}&entity_type=object&entity_subtype=job&search_type=entities" >
         <div class="flex justify-center items-center m-1 font-medium py-2 px-4 bg-blue-50 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700 ">
             <div class="text-lg font-normal leading-none max-w-full flex-initial">
             <i class="bi bi-tags-fill"></i>&nbsp;{{category}}
             </div>
              
         </div>
+          </a>
           
           
      {%endfor%}
      </div>
 
+{% include 'elements/applications.html.twig' %}
 </div>
+
 <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
