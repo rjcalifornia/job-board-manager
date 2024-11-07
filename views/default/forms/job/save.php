@@ -4,6 +4,8 @@
 $data['hidden_guid_input'] = '';
 $guid = elgg_extract('guid', $vars, null);
 
+
+
 $twig = jobs_twig();
 
 if ($guid) {
@@ -141,9 +143,9 @@ $jobExperience = elgg_view_field([
     '#label' => elgg_echo('job:experience'),
     '#type' => 'select',
     'required' => true,
-    'name' => 'job_experience',
+    'name' => 'experience',
     'options_values' => $experience,
-    'value' => elgg_extract('job_experience', $vars),
+    'value' => elgg_extract('experience', $vars),
     'multiple' => false,
 ]);
 

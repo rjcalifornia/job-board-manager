@@ -1,5 +1,6 @@
 <?php
  
+use Elgg\Job\Forms\PrepareFields;
 require_once(__DIR__ . '/lib/functions.php');
 
 return [
@@ -84,6 +85,12 @@ return [
 
 		'menu:title:object:job' => [
 				\Elgg\Notifications\RegisterSubscriptionMenuItemsHandler::class => [],
+			],
+		],
+
+		'form:prepare:fields' => [
+			'job/save' => [
+				PrepareFields::class => [],
 			],
 		],
 	],

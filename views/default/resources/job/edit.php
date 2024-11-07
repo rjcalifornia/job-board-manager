@@ -32,7 +32,7 @@ $form_vars = [
 ];
 
 $body_vars = [
-	'entity' => $blog,
+	'entity' => $job,
 	'revision' => $revision,
 ];
 

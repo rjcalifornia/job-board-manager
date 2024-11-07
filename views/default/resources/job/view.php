@@ -5,7 +5,8 @@ elgg_entity_gatekeeper($guid, 'object', 'job');
 
 $entity = get_entity($guid);
 
-elgg_push_entity_breadcrumbs($entity);
+
+elgg_push_collection_breadcrumbs('object', 'job');
 
 echo elgg_view_page($entity->getDisplayName(), [
 	'content' => elgg_view_entity($entity, [
@@ -16,7 +17,6 @@ echo elgg_view_page($entity->getDisplayName(), [
 	'entity' => $entity,
 	'sidebar' => elgg_view('job/sidebar', [
 		'entity' => $entity,
-		'single' => true,
 	]),
 ], 'default', [
 	'entity' => $entity,
