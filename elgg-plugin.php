@@ -37,6 +37,8 @@ return [
 			'path' => '/jobs/all',
 			'resource' => 'job/all',
 		],
+
+		//Add new job opening
 		'add:object:job' => [
                         'path' => '/job/add/{guid}',
                         'resource' => 'job/add',
@@ -44,11 +46,25 @@ return [
 				\Elgg\Router\Middleware\Gatekeeper::class,
 				\Elgg\Router\Middleware\PageOwnerGatekeeper::class,
 			],
-                ],
+		],
 
+		//View job details
 		'view:object:job' => [
 			'path' => '/jobs/view/{guid}/{title?}',
 			'resource' => 'job/view',
+		],
+
+
+		//Edit job details
+		'edit:object:job' => [
+			'path' => '/jobs/edit/{guid}/{revision?}',
+			'resource' => 'job/edit',
+			'requirements' => [
+				'revision' => '\d+',
+			],
+			'middleware' => [
+				\Elgg\Router\Middleware\Gatekeeper::class,
+			],
 		],
 	],
 
