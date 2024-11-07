@@ -70,6 +70,5 @@ return [
 				\Elgg\Notifications\RegisterSubscriptionMenuItemsHandler::class => [],
 			],
 		],
-
 	],
 ];
