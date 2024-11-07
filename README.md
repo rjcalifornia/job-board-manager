@@ -29,7 +29,7 @@
 - Run ``` npm install ``` to install BootStrap Icons and Tailwindcss
 
 ## Customizing with Tailwind CSS
-- Run  ``` npx tailwindcss -i ./src/input.css -o ./src/output.css --watch ``` 
+- Run  ``` npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch ``` 
 - Add the desired Tailwind CSS classes to the ``` index.html ``` file in the ``` src ``` folder
 
 ## Dependencies
