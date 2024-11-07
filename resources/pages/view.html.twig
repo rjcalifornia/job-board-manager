@@ -1,108 +1,87 @@
 <div class="m-8">
+  <div class="flex flex-wrap justify-start gap-4 xl:gap-4 pb-8 pt-2 sm:gap-2 md:gap-2">
+    <div>
+      <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 shadow-md hover:shadow-lg">
+        <i class="bi bi-check-circle-fill"></i>&nbsp;
+        {{ data.status }}
+      </span>
+    </div>
+    <div>
+      <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 shadow-md hover:shadow-lg">
+        <i class="bi bi-pin-map-fill"></i>&nbsp;
+        {{ data.location }}
+      </span>
+    </div>
 
-     <div class="flex flex-wrap justify-start gap-4 xl:gap-4 pb-8 pt-2 sm:gap-2 md:gap-2 ">
-          <div>
-               <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 shadow-md hover:shadow-lg ">
-                    <i class="bi bi-check-circle-fill"></i>&nbsp;
-                    {{data.status}}
-               </span>
-               </div>
-          <div>
-               
-               <span class="inline-flex items-center rounded-md  bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 shadow-md hover:shadow-lg ">
-               <i class="bi bi-pin-map-fill"></i>&nbsp;
-               {{data.location}}
-               </span>
+    <div>
+      <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 shadow-md hover:shadow-lg">
+        <i class="bi bi-file-earmark-check-fill"></i>&nbsp;
+        {{ labels.openings }}: {{ data.openings }}
+      </span>
+    </div>
 
-          </div>
+    <div>
+      <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 shadow-md hover:shadow-lg">
+        <i class="bi bi-cash-coin"></i>&nbsp;
+        {{ labels.salary }}: {{ data.salary }}
+      </span>
+    </div>
+  </div>
 
-          <div>
-          <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 shadow-md hover:shadow-lg ">
-               <i class="bi bi-file-earmark-check-fill"></i>&nbsp;
-               {{labels.openings}}: {{data.openings}}
-          </span>
-          </div>
+  <div class="pb-6">
+    <div class="font-semibold text-lg pb-2">
+      <i class="bi bi-info-circle-fill"></i> {{ labels.overview }}
+    </div>
+    <span class="text-justify">{{ data.overview|raw }}</span>
+  </div>
 
-          <div>
-               <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 shadow-md hover:shadow-lg ">
-               <i class="bi bi-cash-coin"></i>&nbsp;
-               {{labels.salary}}: {{data.salary}}
-               </span>
+  <div class="pb-4">
+    <div class="font-semibold text-lg pb-2">
+      <i class="bi bi-clipboard-check-fill"></i> {{ labels.qualifications }}
+    </div>
+    <span class="text-justify">{{ data.qualifications|raw }}</span>
+  </div>
 
-          </div>
+  <div class="pb-4">
+    <div class="font-semibold text-lg pb-2">
+      <i class="bi bi-box-seam-fill"></i> {{ labels.type }}
+    </div>
+    <span class="text-justify">{{ data.job_type }}</span>
+  </div>
 
-     
+  <div class="pb-4">
+    <div class="font-semibold text-lg pb-2">
+      <i class="bi bi-calendar2-week-fill"></i> {{ labels.experience }}
+    </div>
+    <span class="text-justify">{{ data.experience }}+ years</span>
+  </div>
 
+  <div class="pb-8">
+    <div class="font-semibold text-lg pb-2">
+      <i class="bi bi-calendar-check-fill"></i> {{ labels.published }}
+    </div>
+    <span class="text-justify">{{ data.published }}</span>
+  </div>
+  <div class="pb-2">
+    <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+    <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3"> {{labels.deadline}} </span>
+    <span class="font-semibold mr-2 text-left flex-auto">{{data.deadline}}</span>
      </div>
+  </div>
 
-     <div class="pb-6">
-          <div class="font-semibold text-lg pb-2"> 
-               <i class="bi bi-info-circle-fill"></i> {{labels.overview}}
+
+  <div class="flex flex-wrap justify-start pt-12">
+    {% for category in data.categories %}
+      <a href="{{ data.site_url }}search?q={{ category }}&entity_type=object&entity_subtype=job&search_type=entities">
+        <div class="flex justify-center items-center m-1 font-medium py-2 px-4 bg-blue-50 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700">
+          <div class="text-lg font-normal leading-none max-w-full flex-initial">
+            <i class="bi bi-tags-fill"></i>&nbsp;{{ category }}
           </div>
-          <span class="text-justify">
-               {{data.overview|raw}}
-          </span>
-     </div>
-
-     <div class="pb-4">
-          <div class="font-semibold text-lg pb-2"> 
-
-          <i class="bi bi-clipboard-check-fill"></i> {{labels.qualifications}} 
-          </div>
-          <span class="text-justify">
-          {{data.qualifications|raw}}
-          </span>
-     </div>
-
-     <div class="pb-4">
-          <div class="font-semibold text-lg pb-2"> 
-
-          <i class="bi bi-box-seam-fill"></i> {{labels.type}} 
-          </div>
-          <span class="text-justify">
-          {{data.job_type}}
-          </span>
-     </div>
-
-     <div class="pb-4">
-          <div class="font-semibold text-lg pb-2"> 
-
-          <i class="bi bi-calendar2-week-fill"></i> {{labels.experience}} 
-          </div>
-          <span class="text-justify">
-          {{data.experience}}+ years
-          </span>
-     </div>
-
-     <div class="pb-4">
-          <div class="font-semibold text-lg pb-2"> 
-
-          <i class="bi bi-calendar-check-fill"></i> {{labels.published}} 
-          </div>
-          <span class="text-justify">
-          {{data.published}}
-          </span>
-     </div>
-      
-     
-    <div class="flex flex-wrap justify-start pt-12">
-     {% for category in data.categories %}
-          <a href="{{data.site_url}}search?q={{category}}&entity_type=object&entity_subtype=job&search_type=entities" >
-        <div class="flex justify-center items-center m-1 font-medium py-2 px-4 bg-blue-50 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700 ">
-            <div class="text-lg font-normal leading-none max-w-full flex-initial">
-            <i class="bi bi-tags-fill"></i>&nbsp;{{category}}
-            </div>
-             
         </div>
-          </a>
-          
-          
-     {%endfor%}
-     </div>
-
- 
+      </a>
+    {% endfor %}
+  </div>
 </div>
 
- 
-<link rel="stylesheet" href="{{data.site_url}}mod/job-board-manager/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="{{data.site_url}}mod/job-board-manager/dist/output.css">
+<link rel="stylesheet" href="{{ data.site_url }}mod/job-board-manager/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+<link rel="stylesheet" href="{{ data.site_url }}mod/job-board-manager/dist/output.css" />

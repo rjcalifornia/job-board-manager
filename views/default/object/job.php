@@ -46,6 +46,7 @@ if (elgg_extract('full_view', $vars)) {
 		'salary' => elgg_echo('job:salary'),
 		'experience' => elgg_echo('job:experience'),
 		'published' => elgg_echo('job:published'),
+		'deadline' => elgg_echo('job:label_deadline'),
 	];
 	
 	$data = [
@@ -57,6 +58,7 @@ if (elgg_extract('full_view', $vars)) {
 		'location' => $entity->location,
 		'salary' => $entity->salary,
 		'experience' => $entity->experience,
+		'deadline' => $entity->deadline,
 		'status' => $jobStatus,
 		'published' => date(("F j, Y"),$entity->time_created),
 		'categories' => $entity->tags,

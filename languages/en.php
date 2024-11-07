@@ -32,6 +32,7 @@ return array(
 	'job:type' => 'Job type',
 	'job:skills' => 'Skills',
 	'job:deadline' => 'Job expiration date',
+	'job:label_deadline' => 'Last day to apply',
 	'job:openings' => 'Openings',
 	'job:experience' => 'Experience',
 	'job:published' => 'Publish date',
