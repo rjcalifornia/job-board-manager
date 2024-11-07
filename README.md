@@ -1,5 +1,13 @@
 # Job Board Manager for Elgg
 
+
+<p align="center">
+  
+<img src="https://raw.githubusercontent.com/rjcalifornia/job-board-manager/refs/heads/master/assets/jobs-for-elgg.png" width="562">
+
+<br>
+</p>
+
 ## Main Features
 
 
