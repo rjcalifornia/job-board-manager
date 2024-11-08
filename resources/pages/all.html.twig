@@ -1,23 +1,25 @@
 <div class="m-8">
-    
-  <div class="flex flex-row justify-start gap-8 xl:gap-8 pb-8 pt-2 sm:gap-2 md:gap-2">
+  <div class="flex flex-row justify-start gap-8 xl:gap-8 pb-8 pt-2 sm:gap-4 md:gap-4">
     {% for entity in entities %}
       <div class="max-w-sm rounded overflow-hidden shadow-lg basis-1/2">
-        <img class="w-full" src="https://v1.tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" />
+         
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">  {{ entity.title }}</div>
-          <p class="text-gray-700 text-base">
-            {{ entity.excerpt }}
-          </p>
+          <div class="font-bold text-xl mb-2">
+            <a href="{{ entity.url }}">{{ entity.title }}</a>
+          </div>
+          <p class="text-gray-700 text-base">{{ entity.overview|trim|striptags|slice(0, 150) }}...</p>
+          <p class="text-gray-700 text-base pt-4"><i class="bi bi-pin-map-fill"></i>&nbsp; {{ entity.location }}</p>
         </div>
+            
         <div class="px-6 pt-4 pb-2">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+          {% for category in entity.tags %}
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><i class="bi bi-hash"></i>{{ category }}</span>
+          {% endfor %}
         </div>
       </div>
     {% endfor %}
   </div>
 </div>
 
+<link rel="stylesheet" href="{{ data.site_url }}mod/job-board-manager/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 <link rel="stylesheet" href="{{ data.site_url }}mod/job-board-manager/dist/output.css" />
