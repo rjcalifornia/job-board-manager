@@ -12,7 +12,7 @@ $defaults = [
 	'type' => 'object',
 	'subtype' => 'job',
 	'full_view' => false,
-	'//no_results' => elgg_echo('jobs:none'),
+	'no_results' => elgg_echo('jobs:none'),
 	'distinct' => false,
 ];
 
