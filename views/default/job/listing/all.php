@@ -6,6 +6,7 @@
  *
  * @uses $vars['options'] Additional listing options
  */
+$twig = jobs_twig();
 
 $defaults = [
 	'type' => 'object',
@@ -18,8 +19,14 @@ $defaults = [
 $options = (array) elgg_extract('options', $vars, []);
 $options = array_merge($defaults, $options);
 
-echo elgg_list_entities($options);
- 
+//echo elgg_list_entities($options);
 
 $entities= elgg_get_entities($defaults);
 
+echo $twig->render(
+	'pages/all.html.twig',
+	[
+		'entities' => $entities,
+ 
+	]
+);

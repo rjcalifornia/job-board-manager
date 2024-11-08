@@ -26,13 +26,12 @@ if ($entity->status && $entity->status !== 'published') {
 	$vars['access'] = $entity->future_access;
 }
 
-switch($entity->status){
+switch ($entity->status) {
 	case 'published':
 		$jobStatus =  elgg_echo('job:open');
 		break;
 	default:
 		$jobStatus = elgg_echo('job:closed');
-
 }
 
 if (elgg_extract('full_view', $vars)) {
@@ -48,7 +47,7 @@ if (elgg_extract('full_view', $vars)) {
 		'published' => elgg_echo('job:published'),
 		'deadline' => elgg_echo('job:label_deadline'),
 	];
-	
+
 	$data = [
 		'correlative' => $entity->correlative,
 		'overview' => $entity->overview,
@@ -60,7 +59,7 @@ if (elgg_extract('full_view', $vars)) {
 		'experience' => $entity->experience,
 		'deadline' => $entity->deadline,
 		'status' => $jobStatus,
-		'published' => date(("F j, Y"),$entity->time_created),
+		'published' => date(("F j, Y"), $entity->time_created),
 		'categories' => $entity->tags,
 		'site_url' =>  elgg_get_site_url(),
 	];
