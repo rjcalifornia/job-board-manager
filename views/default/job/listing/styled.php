@@ -19,4 +19,16 @@ $defaults = [
 $options = (array) elgg_extract('options', $vars, []);
 $options = array_merge($defaults, $options);
 
-echo elgg_list_entities($options);
+$entities= elgg_get_entities($defaults);
+
+foreach ($entities as $entity) {
+	$entity->url = $entity->getUrl();
+}
+
+echo $twig->render(
+	'pages/all.html.twig',
+	[
+		'entities' => $entities,
+ 
+	]
+);
