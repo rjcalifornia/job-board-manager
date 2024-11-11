@@ -57,11 +57,8 @@ return array(
 
 	'river:object:job:create' => '%s bookmarked %s',
 	'river:object:job:comment' => '%s commented on a bookmark %s',
-
-	'groups:tool:job' => 'Enable group job',
-	'groups:tool:job:description' => 'Allow group members to share job in this group.',
-	
  
+	'job:usestyledmode' => 'Use styled mode. Warning, no pagination yet.', 
  
 	/**
 	 * Status messages
