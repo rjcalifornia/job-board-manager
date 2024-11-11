@@ -49,6 +49,7 @@ if (elgg_extract('full_view', $vars)) {
 	];
 
 	$data = [
+		'title' => $entity->title,
 		'correlative' => $entity->correlative,
 		'overview' => $entity->overview,
 		'qualifications' => $entity->qualifications,
