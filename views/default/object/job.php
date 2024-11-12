@@ -7,6 +7,7 @@
  */
 
 $entity = elgg_extract('entity', $vars);
+$showApplications = false;
 if (!$entity instanceof \ElggJob) {
 	return;
 }
@@ -14,6 +15,15 @@ if (!$entity instanceof \ElggJob) {
 if (!isset($vars['imprint'])) {
 	$vars['imprint'] = [];
 }
+
+
+$owner = $entity->getOwnerEntity();
+$loggedUser = elgg_get_logged_in_user_entity();
+
+if($owner->guid == $loggedUser?->guid){
+	$showApplications = true;
+}
+
 
 if ($entity->status && $entity->status !== 'published') {
 	$vars['imprint'][] = [
@@ -83,6 +93,7 @@ if (elgg_extract('full_view', $vars)) {
 		'elgg_token' => $token,
 		'elgg_guid' => $entity->guid,
 		'applications' => $applications,
+		'show_applications' => $showApplications
 
 	];
 

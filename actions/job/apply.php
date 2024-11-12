@@ -9,6 +9,7 @@ $firstName = get_input('first_name');
 $lastName = get_input('last_name');
 $email = get_input('email');
 $phone = get_input('phone');
+$linkedin = get_input('linkedin');
 $coverLetter = get_input('cover_letter');
 
 
@@ -21,6 +22,7 @@ $application->last_name = $lastName;
 $application->email = $email;
 $application->phone = $phone;
 $application->cover_letter = $coverLetter;
+$application->linkedin = $linkedin;
 $application->container_guid = $guid;
 $application->access_id = 2;
 //$application->resume = $file;

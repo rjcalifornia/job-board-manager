@@ -1,6 +1,8 @@
 <div class="m-8">
 <div class="text-end pb-8">
+{% if not data.show_applications %}
     <span class="py-3 px-4 inline-flex items-center gap-x-2 text-2xl font-medium rounded-lg border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-blue-500" style="cursor: pointer" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-slide-down-animation-modal" data-hs-overlay="#hs-slide-down-animation-modal"><i class="bi bi-patch-check-fill"></i>&nbsp;Apply to role</span>
+ {% endif %}
   </div>
   <div class="flex flex-wrap justify-start gap-4 xl:gap-4 pb-8 pt-2 sm:gap-2 md:gap-2">
     <div>
@@ -83,11 +85,13 @@
       </a>
     {% endfor %}
   </div>
-
+{% if(data.show_applications)%}
   {% include 'job/elements/applications.html.twig' %}
+{% endif %}
 </div>
-
+{% if(data.show_applications)%}
 {% include 'job/forms/apply.html.twig' %}
+{% endif %}
 
 
 
