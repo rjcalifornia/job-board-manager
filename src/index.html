@@ -250,7 +250,7 @@
       </div>
     </div>
 
-    <div class=" flex-row justify-end">
+    <div class=" flex-row justify-end pt-8 pb-8 pl-12 pr-12">
  
       <div class="relative inline-block text-left">
         <div>
@@ -324,7 +324,7 @@
   </div>
 </div>
 
-<div class="max-w-sm">
+<div class="max-w-sm pt-8">
   <label for="input-label" class="block text-sm font-medium mb-2 dark:text-white">Email</label>
   <input type="email" id="input-label" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="you@site.com">
 </div>
@@ -476,6 +476,64 @@
 </form>
 
 
+<div class="max-w-sm pt-6 pb-8">
+  <label for="textarea-label" class="block text-sm font-medium mb-2 dark:text-white">Comment</label>
+  <textarea id="textarea-label" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" rows="3" placeholder="Say hi..."></textarea>
+</div>
+
+<div class="max-w-sm space-y-4">
+  <div>
+    <label for="hs-validation-name-error" class="block text-sm font-medium mb-2 dark:text-white">Email</label>
+    <div class="relative">
+      <input type="text" id="hs-validation-name-error" name="hs-validation-name-error" class="py-3 px-4 block w-full border-red-500 rounded-lg text-sm focus:border-red-500 focus:ring-red-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400" required="" aria-describedby="hs-validation-name-error-helper">
+      <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+        <svg class="shrink-0 size-4 text-red-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" x2="12" y1="8" y2="12"></line>
+          <line x1="12" x2="12.01" y1="16" y2="16"></line>
+        </svg>
+      </div>
+    </div>
+    <p class="text-sm text-red-600 mt-2" id="hs-validation-name-error-helper">Please enter a valid email address.</p>
+  </div>
+
+  <div>
+    <label for="hs-validation-name-success" class="block text-sm font-medium mb-2 dark:text-white">Email</label>
+    <div class="relative">
+      <input type="text" id="hs-validation-name-success" name="hs-validation-name-success" class="py-3 px-4 block w-full border-teal-500 rounded-lg text-sm focus:border-teal-500 focus:ring-teal-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400" required="" aria-describedby="hs-validation-name-success-helper">
+      <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+        <svg class="shrink-0 size-4 text-teal-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+    </div>
+    <p class="text-sm text-teal-600 mt-2" id="hs-validation-name-success-helper">Looks good!</p>
+  </div>
+</div>
+
+<form
+  class="bg-white shadow-lg rounded-md p-5 md:p-10 flex flex-col w-11/12 max-w-lg"
+  novalidate
+>
+
+<label for="email" class="mb-5">
+  <span>Email</span>
+  <input
+    type="email"
+    name="email"
+    id="email"
+    class="... peer"
+    placeholder=" "
+    required
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+  />
+  <span class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+    Please enter a valid email address
+  </span>
+</label>
+
+<button type="submit" class="... group-invalid:pointer-events-none group-invalid:opacity-30">Submit</button>
+</form>
 
   </div>
 
