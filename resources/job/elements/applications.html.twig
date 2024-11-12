@@ -1,40 +1,38 @@
-<div class="-m-1.5 overflow-auto">
+<div class="-m-1.5 overflow-auto pt-12">
   <div class="p-1.5 min-w-full inline-block align-middle">
-    <div class="overflow-hidden">
+            <caption class="py-2 text-start text-sm text-gray-600 dark:text-neutral-500">Applications received</caption>
+            
+    <div class="border rounded-lg shadow overflow-hidden dark:border-neutral-700">
       <div class="table border-collapse table-auto w-full divide-y divide-gray-200 dark:divide-neutral-700">
         <div class="table-header-group">
           <div class="table-row">
             <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Name</div>
-            <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Age</div>
-            <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Address</div>
+            <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Email</div>
+            <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Phone</div>
             <div class="table-cell px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</div>
           </div>
         </div>
         <div class="table-row-group divide-y divide-gray-200 bg-white dark:divide-neutral-700 dark:bg-neutral-800">
-          <div class="table-row">
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">John Brown</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">45</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">New York No. 1 Lake Park</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-              <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400">Delete</button>
+        {% for application in data.applications %}
+          <div class="table-row odd:bg-white even:bg-gray-100 hover:bg-gray-100 dark:odd:bg-neutral-800 dark:even:bg-neutral-700 dark:hover:bg-neutral-700">
+            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+            {{application.first_name}} {{application.last_name}}
             </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Jim Green</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">27</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">London No. 1 Lake Park</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-              <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400">Delete</button>
+            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+             {{application.email}}
             </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Joe Black</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">31</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">Sidney No. 1 Lake Park</div>
-            <div class="table-cell px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-              <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400">Delete</button>
+            <div class="table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+             {{application.phone}}
             </div>
-          </div>
+            <div class="table-cell px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+            <button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent text-blue-600 hover:bg-blue-100 hover:text-blue-800 focus:outline-none focus:bg-blue-100 focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:bg-blue-800/30 dark:hover:text-blue-400 dark:focus:bg-blue-800/30 dark:focus:text-blue-400">
+                Download resume
+            </button
+              
+            </div>
+        </div>
+        {% endfor %}
+         
         </div>
       </div>
     </div>
