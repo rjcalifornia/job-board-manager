@@ -23,8 +23,9 @@ $application->email = $email;
 $application->phone = $phone;
 $application->cover_letter = $coverLetter;
 $application->linkedin = $linkedin;
-$application->container_guid = $guid;
+$application->container_guid = $entity->guid;
 $application->access_id = 2;
+$application->owner_guid = $entity->guid;
 //$application->resume = $file;
 $application->application_identifier = $jobUtils->generateIdentifier();
 
