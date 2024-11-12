@@ -12,7 +12,7 @@ $data = [
 
 
  echo $twig->render(
-    'elements/sidebar.html.twig',
+    'job/elements/sidebar.html.twig',
     [
         'data' => $data,
     ]

@@ -26,7 +26,7 @@ foreach ($entities as $entity) {
 }
 
 echo $twig->render(
-	'pages/all.html.twig',
+	'job/pages/all.html.twig',
 	[
 		'entities' => $entities,
  

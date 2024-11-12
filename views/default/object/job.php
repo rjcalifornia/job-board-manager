@@ -90,7 +90,7 @@ if (elgg_extract('full_view', $vars)) {
 	
 	
 	echo $twig->render(
-		'pages/view.html.twig',
+		'job/pages/view.html.twig',
 		[
 			'data' => $data,
 			'labels' => $labels,
