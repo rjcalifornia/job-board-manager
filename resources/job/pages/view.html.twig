@@ -84,12 +84,12 @@
     {% endfor %}
   </div>
 
-  
+  {% include 'job/elements/applications.html.twig' %}
 </div>
 
 {% include 'job/forms/apply.html.twig' %}
 
-{% include 'job/elements/applications.html.twig' %}
+
 
 <link rel="stylesheet" href="{{ data.site_url }}mod/job-board-manager/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 <link rel="stylesheet" href="{{ data.site_url }}mod/job-board-manager/dist/output.css" />
