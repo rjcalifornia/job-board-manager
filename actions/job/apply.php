@@ -3,7 +3,7 @@
 use JobUtils;
 
 $jobUtils = new JobUtils;
-
+elgg_call(ELGG_IGNORE_ACCESS, function() use ($jobUtils) {
 $guid = get_input('__elgg_guid');
 $firstName = get_input('first_name');
 $lastName = get_input('last_name');
@@ -22,6 +22,7 @@ $application->email = $email;
 $application->phone = $phone;
 $application->cover_letter = $coverLetter;
 $application->container_guid = $guid;
+$application->access_id = 2;
 //$application->resume = $file;
 $application->application_identifier = $jobUtils->generateIdentifier();
 
@@ -30,3 +31,4 @@ if (!$application->save()) {
 }
 
 return elgg_ok_response('', elgg_echo('job:save:success'), $entity->getURL());
+});

@@ -71,6 +71,20 @@ if (elgg_extract('full_view', $vars)) {
 
 	];
 
+	$defaults = [
+		'type' => 'object',
+		'container_guid' => $entity->guid,
+		'subtype' => 'job_application',
+		'full_view' => false,
+		'no_results' => elgg_echo('jobs:none'),
+		'distinct' => false,
+	];
+	
+	$options = (array) elgg_extract('options', $vars, []);
+	$options = array_merge($defaults, $options);
+	
+	//dd( elgg_get_entities($options));
+	
 	echo $twig->render(
 		'pages/view.html.twig',
 		[
