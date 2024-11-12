@@ -89,7 +89,7 @@
   {% include 'job/elements/applications.html.twig' %}
 {% endif %}
 </div>
-{% if(data.show_applications)%}
+{% if not data.show_applications %}
 {% include 'job/forms/apply.html.twig' %}
 {% endif %}
 
