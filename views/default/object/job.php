@@ -36,7 +36,9 @@ switch ($entity->status) {
 
 if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
-
+	$ts = elgg()->csrf->getCurrentTime()->getTimestamp();
+	$token = elgg()->csrf->generateActionToken($ts);
+	
 	$labels = [
 		'overview' => elgg_echo('job:overview'),
 		'qualifications' => elgg_echo('job:qualifications'),
@@ -63,6 +65,10 @@ if (elgg_extract('full_view', $vars)) {
 		'published' => date(("F j, Y"), $entity->time_created),
 		'categories' => $entity->tags,
 		'site_url' =>  elgg_get_site_url(),
+		'elgg_timestamp' => $ts,
+		'elgg_token' => $token,
+		'elgg_guid' => $entity->guid,
+
 	];
 
 	echo $twig->render(

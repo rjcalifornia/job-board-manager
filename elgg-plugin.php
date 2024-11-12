@@ -1,35 +1,52 @@
 <?php
- 
+
 use Elgg\Job\Forms\PrepareFields;
+
 require_once(__DIR__ . '/lib/functions.php');
 
 return [
 
 	//Plugin information
-        'plugin' => [
+	'plugin' => [
 		'name' => 'Job Manager',
 		'activate_on_install' => false,
 	],
-        'entities' => [
-                [
-                        'type' => 'object',
-                        'subtype' => 'job',
-                        'class' => 'ElggJob',
-                        'capabilities' => [
-                                'commentable' => true,
+	'entities' => [
+		[
+			'type' => 'object',
+			'subtype' => 'job',
+			'class' => 'ElggJob',
+			'capabilities' => [
+				'commentable' => true,
 				'searchable' => true,
 				'likable' => true,
 				'restorable' => true,
-                        ],
-                ],
-        ],
-        'actions' => [
+			],
+		],
+		[
+			'type' => 'object',
+			'subtype' => 'job_application',
+			'class' => 'ElggJobApplication',
+			'capabilities' => [
+				'commentable' => false,
+				'searchable' => false,
+				'likable' => false,
+				'restorable' => false,
+			],
+		],
+
+	],
+	'actions' => [
 		'job/save' => [],
+
+		'job/apply' => [
+         'access' => 'public',
+      ],
 	],
 
 	//Plugin routes. It would be better to have a routes files, like in Laravel though.
 	'routes' => [
-                'default:object:job' => [
+		'default:object:job' => [
 			'path' => '/jobs',
 			'resource' => 'job/all',
 		],
@@ -41,9 +58,9 @@ return [
 
 		//Add new job opening
 		'add:object:job' => [
-                        'path' => '/job/add/{guid}',
-                        'resource' => 'job/add',
-                        'middleware' => [
+			'path' => '/job/add/{guid}',
+			'resource' => 'job/add',
+			'middleware' => [
 				\Elgg\Router\Middleware\Gatekeeper::class,
 				\Elgg\Router\Middleware\PageOwnerGatekeeper::class,
 			],
@@ -78,12 +95,12 @@ return [
 				'Elgg\Job\Menus\Site::register' => [],
 			],
 
-		'menu:owner_block' => [
+			'menu:owner_block' => [
 				'Elgg\Job\Menus\OwnerBlock::registerUserItem' => [],
-				 
+
 			],
 
-		'menu:title:object:job' => [
+			'menu:title:object:job' => [
 				\Elgg\Notifications\RegisterSubscriptionMenuItemsHandler::class => [],
 			],
 		],
