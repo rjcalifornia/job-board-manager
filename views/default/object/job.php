@@ -38,6 +38,20 @@ if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
 	$ts = elgg()->csrf->getCurrentTime()->getTimestamp();
 	$token = elgg()->csrf->generateActionToken($ts);
+
+	$applications_defaults = [
+		'type' => 'object',
+		'container_guid' => $entity->guid,
+		'subtype' => 'job_application',
+		'full_view' => false,
+		'no_results' => elgg_echo('jobs:applications:none'),
+		'distinct' => false,
+	];
+	
+	$options = (array) elgg_extract('options', $vars, []);
+	$options = array_merge($applications_defaults, $options);
+	
+	$applications = elgg_get_entities($options);
 	
 	$labels = [
 		'overview' => elgg_echo('job:overview'),
@@ -68,22 +82,12 @@ if (elgg_extract('full_view', $vars)) {
 		'elgg_timestamp' => $ts,
 		'elgg_token' => $token,
 		'elgg_guid' => $entity->guid,
+		'applications' => $applications,
 
 	];
 
-	$defaults = [
-		'type' => 'object',
-		'container_guid' => $entity->guid,
-		'subtype' => 'job_application',
-		'full_view' => false,
-		'no_results' => elgg_echo('jobs:none'),
-		'distinct' => false,
-	];
 	
-	$options = (array) elgg_extract('options', $vars, []);
-	$options = array_merge($defaults, $options);
 	
-	//dd( elgg_get_entities($options));
 	
 	echo $twig->render(
 		'pages/view.html.twig',
