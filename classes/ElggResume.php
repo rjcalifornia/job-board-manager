@@ -10,11 +10,18 @@ class ElggResume extends ElggFile {
 	/**
 	 * {@inheritDoc}
 	 */
+	const SUBTYPE = 'resume';
+
 	protected function initializeAttributes() {
 		parent::initializeAttributes();
 
-		$this->attributes['subtype'] = 'resume';
+		$this->attributes['subtype'] = self::SUBTYPE;
 	}
+
+	public function __construct($guid = null) {
+		parent::__construct($guid);
+	}
+
 
   
      

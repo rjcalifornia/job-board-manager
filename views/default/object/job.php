@@ -20,7 +20,7 @@ if (!isset($vars['imprint'])) {
 $owner = $entity->getOwnerEntity();
 $loggedUser = elgg_get_logged_in_user_entity();
 
-if($owner->guid == $loggedUser?->guid){
+if ($owner->guid == $loggedUser?->guid) {
 	$showApplications = true;
 }
 
@@ -44,21 +44,6 @@ switch ($entity->status) {
 		$jobStatus = elgg_echo('job:closed');
 }
 
-$applications_defaults = [
-	'type' => 'object',
-	
-	'subtype' => 'resume',
-	'full_view' => false,
-	'no_results' => elgg_echo('jobs:applications:none'),
-	'distinct' => false,
-];
-
-$options = (array) elgg_extract('options', $vars, []);
-$options = array_merge($applications_defaults, $options);
-
-$applications = elgg_get_entities($options);
-
-dd($applications[0]->title);
 
 if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
@@ -73,12 +58,34 @@ if (elgg_extract('full_view', $vars)) {
 		'no_results' => elgg_echo('jobs:applications:none'),
 		'distinct' => false,
 	];
-	
+
 	$options = (array) elgg_extract('options', $vars, []);
 	$options = array_merge($applications_defaults, $options);
-	
+
 	$applications = elgg_get_entities($options);
-	
+
+	foreach ($applications as $application) {
+		$resume = elgg_get_entities([
+			'type' => 'object',
+			'subtype' => 'resume',
+			'full_view' => false,
+			'preload_containers' => true,
+			'distinct' => false,
+			
+			
+		]);
+		//dd($resume);
+		if ($resume) {
+			$entity = get_entity($resume[0]->guid);
+			//dd($entity);
+			$url = elgg_get_download_url($entity);
+			
+			$application->url = $url;
+		}
+	}
+
+
+
 	$labels = [
 		'overview' => elgg_echo('job:overview'),
 		'qualifications' => elgg_echo('job:qualifications'),
@@ -113,9 +120,9 @@ if (elgg_extract('full_view', $vars)) {
 
 	];
 
-	
-	
-	
+
+
+
 	echo $twig->render(
 		'job/pages/view.html.twig',
 		[

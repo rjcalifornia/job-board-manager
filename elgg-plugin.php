@@ -34,6 +34,17 @@ return [
 				'restorable' => false,
 			],
 		],
+		[
+			'type' => 'object',
+			'subtype' => 'resume',
+			'class' => 'ElggResume',
+			'capabilities' => [
+				'commentable' => false,
+				'searchable' => false,
+				'likable' => false,
+				'restorable' => false,
+			],
+		],
 
 	],
 	'actions' => [

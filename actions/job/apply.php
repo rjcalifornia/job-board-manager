@@ -49,6 +49,10 @@ $application->owner_guid = $entity->guid;
 $application->application_identifier = $jobUtils->generateIdentifier();
 
 
+if (!$application->save()) {
+	return elgg_error_response(elgg_echo('job:application:failed'));
+}
+
 $file = new ElggResume();
 $file->container_guid = $application->getGUID();
 $file->access_id = 2;
@@ -56,10 +60,6 @@ $file->owner_guid = 1;
 if ($file->acceptUploadedFile($resume)) {
 	$file->title =  $jobUtils->generateIdentifier() . '.pdf';
 	$file->save();
-}
-
-if (!$application->save()) {
-	return elgg_error_response(elgg_echo('job:application:failed'));
 }
 
 return elgg_ok_response('', elgg_echo('job:application:success'), $entity->getURL());
