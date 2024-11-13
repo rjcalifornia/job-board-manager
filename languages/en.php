@@ -53,7 +53,17 @@ return array(
 	'job:fixed' => 'Fixed Salary',
  
 
+	'job:modal:apply'=> 'Apply',
+	'job:modal:close'=> 'Close',
+	'job:modal:cancel'=> 'Cancel',
 	'job:application:apply' => 'Apply to role',
+	'job:application:first_name' => 'First name',
+	'job:application:last_name' => 'Last name',
+	'job:application:email' => 'Email',
+	'job:application:phone' => 'Phone',
+	'job:application:linkedin_url' => 'Linkedin URL',
+	'job:application:interests' => 'What interest you about this position?',
+	'job:application:upload' => 'Upload resume',
  
 	'job:numbertodisplay' => 'Number of job to display',
 
