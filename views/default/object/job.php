@@ -64,25 +64,27 @@ if (elgg_extract('full_view', $vars)) {
 
 	$applications = elgg_get_entities($options);
 
-	foreach ($applications as $application) {
-		$resume = elgg_get_entities([
-			'type' => 'object',
-			'subtype' => 'resume',
-			'full_view' => false,
-			'preload_containers' => true,
-			'distinct' => false,
-			
-			
-		]);
-		//dd($resume);
-		if ($resume) {
-			$entity = get_entity($resume[0]->guid);
-			//dd($entity);
-			$url = elgg_get_download_url($entity);
-			
-			$application->url = $url;
-		}
-	}
+	if($showApplications)
+	{
+		foreach ($applications as $application) {
+			$resume = elgg_get_entities([
+				'type' => 'object',
+				'subtype' => 'resume',
+				'container_guid' => $application->guid,
+				'full_view' => false,
+				'preload_containers' => true,
+				'distinct' => false,
+				'limit' => 1,
+
+
+			]);
+			//dd($resume);
+			if ($resume) {
+				
+				$url = elgg_get_download_url($resume[0]);
+				$application->url = $url;
+			}
+		}}
 
 
 
