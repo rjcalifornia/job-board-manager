@@ -24,11 +24,15 @@ $entities= elgg_get_entities($defaults);
 foreach ($entities as $entity) {
 	$entity->url = $entity->getUrl();
 }
+$data = [
+	'site_url' => elgg_get_site_url(),
+];
 
 echo $twig->render(
 	'job/pages/all.html.twig',
 	[
 		'entities' => $entities,
+		'data' => $data,
  
 	]
 );

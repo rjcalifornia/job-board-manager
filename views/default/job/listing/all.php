@@ -6,7 +6,7 @@
  *
  * @uses $vars['options'] Additional listing options
  */
-$twig = jobs_twig();
+//$twig = jobs_twig();
 
 $defaults = [
 	'type' => 'object',
