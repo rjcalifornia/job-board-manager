@@ -97,6 +97,17 @@ if (elgg_extract('full_view', $vars)) {
 		'experience' => elgg_echo('job:experience'),
 		'published' => elgg_echo('job:published'),
 		'deadline' => elgg_echo('job:label_deadline'),
+		'close' => elgg_echo('job:modal:close'),
+		'apply' => elgg_echo('job:modal:apply'),
+		'cancel' => elgg_echo('job:modal:cancel'),
+		'apply_role' => elgg_echo('job:application:apply'),
+		'first_name' => elgg_echo('job:application:first_name'),
+		'last_name' => elgg_echo('job:application:last_name'),
+		'email' => elgg_echo('job:application:email'),
+		'phone' => elgg_echo('job:application:phone'),
+		'linkedin_url' => elgg_echo('job:application:linkedin_url'),
+		'interests' => elgg_echo('job:application:interests'),
+		'upload' => elgg_echo('job:application:upload'),
 	];
 
 	$data = [

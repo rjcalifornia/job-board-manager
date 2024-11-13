@@ -52,6 +52,8 @@ return array(
 	'job:negotiable' => 'Negotiable Salary',
 	'job:fixed' => 'Fixed Salary',
  
+
+	'job:application:apply' => 'Apply to role',
  
 	'job:numbertodisplay' => 'Number of job to display',
 
