@@ -1,13 +1,40 @@
 <div>
-<p>
-{% if data.view_mode == true %}
-    <h3>
-  Similar jobs
-    </h3>
-    {% else %}
-    <h2>
-      Latest jobs
-    </h2>
-    {% endif %}
+  <ul class="space-y-2 sm:space-y-4">
+      <li class="flex gap-x-3">
+        <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+          <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="grow">
+          <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
+            {% if data.view_mode == true %}
+            <span class="font-bold">Similar</span> jobs
+            {% else %}
+            <span class="font-bold">Latest</span> jobs
+            {% endif %}
+          </span>
+        </div>
+      </li>
+    </ul>
+
+   
     </p>
+    <div class="  pb-12">
+      <div class="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+    <nav class="grid gap-4 mt-5 md:mt-10" aria-label="Tabs" role="tablist" aria-orientation="vertical">
+      <span class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 active" id="tabs-with-card-item-1" aria-selected="true" data-hs-tab="#tabs-with-card-1" aria-controls="tabs-with-card-1" role="tab">
+        <span class="flex gap-x-6">
+          <svg class="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></svg>
+          <span class="grow">
+            <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Advanced tools</span>
+            <span 
+             style=" white-space: pre-wrap !important; word-wrap: break-word !important;"
+            class="block mt-1 text-gray-800 
+            dark:hs-tab-active:text-gray-200 
+            dark:text-neutral-200">Use Preline thoroughly thought and automated libraries to manage your businesses.</span>
+          </span>
+        </span>
+      </span>
+      </nav>
+      </div>
+    </div>
 </div>
