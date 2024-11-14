@@ -10,6 +10,9 @@ return [
 	'plugin' => [
 		'name' => 'Job Manager',
 		'activate_on_install' => false,
+		'dependencies' => [
+			'tagcloud' => [],
+		],
 	],
 	'entities' => [
 		[
@@ -74,6 +77,18 @@ return [
 			'middleware' => [
 				\Elgg\Router\Middleware\Gatekeeper::class,
 				\Elgg\Router\Middleware\PageOwnerGatekeeper::class,
+			],
+		],
+
+		'collection:object:job:owner' => [
+			'path' => '/job/owner/{username}/{lower?}/{upper?}',
+			'resource' => 'job/owner',
+			'requirements' => [
+				'lower' => '\d+',
+				'upper' => '\d+',
+			],
+			'middleware' => [
+				\Elgg\Router\Middleware\UserPageOwnerGatekeeper::class,
 			],
 		],
 
