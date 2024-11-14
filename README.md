@@ -38,3 +38,4 @@
 - [Ramsey Uuid 4.7](https://uuid.ramsey.dev/en/stable/) - A PHP library for generating and working with universally unique identifiers (UUIDs).
 - [BootStrap Icons](https://icons.getbootstrap.com/) - Free, high quality, open source icon library with over 2,000 icons.
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes to build any design, directly in your markup.
+- [Preline](https://preline.co/index.html) - Preline UI is an open-source Tailwind CSS components library for any needs.
