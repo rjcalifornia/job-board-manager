@@ -64,6 +64,10 @@ return array(
 	'job:application:linkedin_url' => 'Linkedin URL',
 	'job:application:interests' => 'What interest you about this position?',
 	'job:application:upload' => 'Upload resume',
+	'job:application:success' => 'Application sent.',
+	'job:application:failed' => 'There was a problem sending your application.',
+	'job:upload:not_supported' => 'Sorry, only PDF files are accepted.',
+	'job:upload:failed' => 'There was a problem processing the application, please try again.',
  
 	'job:numbertodisplay' => 'Number of job to display',
 
@@ -76,7 +80,7 @@ return array(
 	 * Status messages
 	 */
 
-	'job:save:success' => "Your item was successfully created.",
+	'job:save:success' => "The job was successfully created.",
 	'entity:delete:object:job:success' => "The job was deleted.",
 
 	/**
