@@ -24,6 +24,9 @@ if ($owner->guid == $loggedUser?->guid) {
 	$showApplications = true;
 }
 
+if(!elgg_is_logged_in()){
+	elgg_import_esm("job/imask");
+}
 
 if ($entity->status && $entity->status !== 'published') {
 	$vars['imprint'][] = [
@@ -47,6 +50,7 @@ switch ($entity->status) {
 
 if (elgg_extract('full_view', $vars)) {
 	$twig = jobs_twig();
+	
 	$ts = elgg()->csrf->getCurrentTime()->getTimestamp();
 	$token = elgg()->csrf->generateActionToken($ts);
 
