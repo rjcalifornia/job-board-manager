@@ -13,7 +13,7 @@ if ($guid) {
     $data['hidden_guid_input'] = new \Twig\Markup($hiddenGuid, 'UTF-8');
 }
 
-
+elgg_import_esm("job/select2");
 $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 
@@ -59,6 +59,7 @@ $title = elgg_view_field([
     '#type' => 'text',
     'required' => true,
     'name' => 'title',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('title', $vars),
 ]);
 
@@ -67,6 +68,7 @@ $deadline = elgg_view_field([
     '#type' => 'date',
     'required' => true,
     'name' => 'deadline',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('deadline', $vars),
 ]);
 
@@ -75,6 +77,7 @@ $overview = elgg_view_field([
     '#type' => 'longtext',
     'required' => true,
     'name' => 'overview',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('overview', $vars),
 ]);
 
@@ -83,6 +86,7 @@ $qualifications = elgg_view_field([
     '#type' => 'longtext',
     'required' => true,
     'name' => 'qualifications',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('qualifications', $vars),
 ]);
 
@@ -91,6 +95,7 @@ $responsabilities = elgg_view_field([
     '#type' => 'longtext',
     'required' => false,
     'name' => 'responsabilities',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('responsabilities', $vars),
 ]);
 
@@ -99,6 +104,7 @@ $location = elgg_view_field([
     '#type' => 'text',
     'required' => true,
     'name' => 'location',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('location', $vars),
 ]);
 
@@ -107,6 +113,7 @@ $openings = elgg_view_field([
     '#type' => 'text',
     'required' => true,
     'name' => 'openings',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('openings', $vars),
 ]);
 
@@ -115,6 +122,7 @@ $salary = elgg_view_field([
     '#type' => 'text',
     'required' => true,
     'name' => 'salary',
+    'class' => 'py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('salary', $vars),
 ]);
 
@@ -123,6 +131,7 @@ $salaryType = elgg_view_field([
     '#type' => 'select',
     'required' => true,
     'name' => 'salary_type',
+    'class' => 'job-dropdown',
     'options_values' => $salaryType,
     'value' => elgg_extract('salary_type', $vars),
     'multiple' => false,
@@ -134,6 +143,7 @@ $jobType = elgg_view_field([
     '#type' => 'select',
     'required' => true,
     'name' => 'job_type',
+    'class' => 'job-dropdown',
     'options_values' => $options,
     'value' => elgg_extract('job_type', $vars),
     'multiple' => false,
@@ -144,6 +154,7 @@ $jobExperience = elgg_view_field([
     '#type' => 'select',
     'required' => true,
     'name' => 'experience',
+    'class' => 'job-dropdown',
     'options_values' => $experience,
     'value' => elgg_extract('experience', $vars),
     'multiple' => false,
@@ -154,6 +165,7 @@ $status = elgg_view_field([
     '#type' => 'select',
     'required' => true,
     'name' => 'status',
+    'class' => 'job-dropdown',
     'options_values' => [
         'draft' => elgg_echo('status:draft'),
 		'published' => elgg_echo('status:published')
@@ -167,6 +179,7 @@ $tags = elgg_view_field([
     '#type' => 'tags',
     'name' => 'tags',
     'id' => 'job_tags',
+    'class' => 'w-full border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600',
     'value' => elgg_extract('tags', $vars),
 ]);
 
@@ -174,6 +187,7 @@ $accesId = elgg_view_field([
     '#label' => elgg_echo('access'),
     '#type' => 'access',
     'name' => 'access_id',
+    'class' => 'job-dropdown',
     'value' => elgg_extract('access_id', $vars, ACCESS_DEFAULT),
     'entity' => elgg_extract('entity', $vars),
     'entity_type' => 'object',
@@ -216,6 +230,7 @@ $data['type_field'] = new \Twig\Markup($jobType, 'UTF-8');
 $data['tags_field'] = new \Twig\Markup($tags, 'UTF-8');
 $data['access_id'] = new \Twig\Markup($accesId, 'UTF-8');
 $data['status'] = new \Twig\Markup($status, 'UTF-8');
+$data['site_url'] =  elgg_get_site_url();
 
 
 
