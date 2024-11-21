@@ -46,7 +46,7 @@ $application->linkedin = $linkedin;
 $application->container_guid = $entity->guid;
 $application->access_id = 2;
 $application->owner_guid = $entity->guid;
-$application->application_identifier = $jobUtils->generateIdentifier();
+$application->application_identifier = substr($jobUtils->generateIdentifier(), 0, 16);
 
 
 if (!$application->save()) {
